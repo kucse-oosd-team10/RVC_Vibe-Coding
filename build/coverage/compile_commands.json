@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/AdapterTimer.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/AdapterTimer.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/AdapterTimer.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/AdapterTimer.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/CleaningManager.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/CleaningManager.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/CleaningManager.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/CleaningManager.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/LegacyAdapters.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/LegacyAdapters.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/LegacyAdapters.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/LegacyAdapters.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/LeftPriorityAvoidanceStrategy.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/LeftPriorityAvoidanceStrategy.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/LeftPriorityAvoidanceStrategy.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/LeftPriorityAvoidanceStrategy.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/MovementManager.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/MovementManager.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/MovementManager.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/MovementManager.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/RvcController.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/RvcController.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/RvcController.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/RvcController.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/RvcStates.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/RvcStates.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/RvcStates.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/RvcStates.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/SensorSubjects.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/SensorSubjects.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/SensorSubjects.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/SensorSubjects.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include --coverage -g -std=c++20 -Wall -Wextra -Wpedantic -o CMakeFiles/rvc_controller.dir/src/SimulatorApi.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/src/SimulatorApi.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/src/SimulatorApi.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_controller.dir/src/SimulatorApi.cpp.o"
+},
+{
+  "directory": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage",
+  "command": "/usr/bin/clang++ -I/Users/whdydrnr/Documents/GitHub/rvc-ai/include -isystem /opt/homebrew/include --coverage -g -std=c++20 -o CMakeFiles/rvc_unit_tests.dir/tests/rvc_unit_tests.cpp.o -c /Users/whdydrnr/Documents/GitHub/rvc-ai/tests/rvc_unit_tests.cpp",
+  "file": "/Users/whdydrnr/Documents/GitHub/rvc-ai/tests/rvc_unit_tests.cpp",
+  "output": "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/CMakeFiles/rvc_unit_tests.dir/tests/rvc_unit_tests.cpp.o"
+}
+]

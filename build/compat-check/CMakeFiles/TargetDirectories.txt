@@ -1,0 +1,4 @@
+/Users/whdydrnr/Documents/GitHub/rvc-ai/build/compat-check/CMakeFiles/rvc_controller.dir
+/Users/whdydrnr/Documents/GitHub/rvc-ai/build/compat-check/CMakeFiles/test.dir
+/Users/whdydrnr/Documents/GitHub/rvc-ai/build/compat-check/CMakeFiles/edit_cache.dir
+/Users/whdydrnr/Documents/GitHub/rvc-ai/build/compat-check/CMakeFiles/rebuild_cache.dir

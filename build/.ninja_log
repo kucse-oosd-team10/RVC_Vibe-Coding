@@ -1,0 +1,22 @@
+# ninja log v7
+3	970	1779079738547927888	CMakeFiles/rvc_controller.dir/src/LeftPriorityAvoidanceStrategy.cpp.o	93fd1ae781fea86c
+4	914	1779079738548058888	CMakeFiles/rvc_controller.dir/src/MovementManager.cpp.o	d1fae9bb81318801
+3	932	1779079738547667014	CMakeFiles/rvc_controller.dir/src/CleaningManager.cpp.o	eb6a340af3723e01
+4	980	1779079738548342304	CMakeFiles/rvc_controller.dir/src/RvcStates.cpp.o	ea09a4bd67e288c3
+4	944	1779079738548200304	CMakeFiles/rvc_controller.dir/src/RvcController.cpp.o	f8f206ac60429ba6
+4	612	1779037326775957958	CMakeFiles/rvc_system_test.dir/tests/rvc_system_test.cpp.o	9a4b60534bef1768
+4	1144	1779079738548697511	CMakeFiles/rvc_unit_tests.dir/tests/rvc_unit_tests.cpp.o	e106c54525a9b97a
+1002	1054	1779079739546481108	librvc_controller.a	da8a5b3c805c75ad
+1144	1523	1779079740066683047	rvc_unit_tests	735b2baba29ccd47
+622	651	1779037327394311435	rvc_system_test	e2120de667ec6c2c
+3	2409	1779112930965457000	build.ninja	317fed3fce29d5bc
+3	2409	1779112930962867436	/Users/whdydrnr/Documents/GitHub/rvc-ai/build/cmake_install.cmake	317fed3fce29d5bc
+3	2409	1779112930963303252	/Users/whdydrnr/Documents/GitHub/rvc-ai/build/CTestTestfile.cmake	317fed3fce29d5bc
+3	947	1779079738547800263	CMakeFiles/rvc_controller.dir/src/LegacyAdapters.cpp.o	f32b2e661341084f
+4	950	1779079738548586053	CMakeFiles/rvc_controller.dir/src/SimulatorApi.cpp.o	3de3951ad9abc488
+3	952	1779079738547317390	CMakeFiles/rvc_controller.dir/src/AdapterTimer.cpp.o	d3a7d9b79a8b9861
+4	1002	1779079738548460220	CMakeFiles/rvc_controller.dir/src/SensorSubjects.cpp.o	56841c6214a02e05
+1144	1523	1779079740066683047	rvc_unit_tests[1]_tests.cmake	735b2baba29ccd47
+1144	1523	1779079740066683047	/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests[1]_tests.cmake	735b2baba29ccd47
+4	2066	1779079738548835928	CMakeFiles/rvc.dir/bindings/rvc_module.cpp.o	3b233dcb20d4e31c
+2066	2105	1779079740610326434	bindings/rvc.cpython-314-darwin.so	8a205dc85f8d8add

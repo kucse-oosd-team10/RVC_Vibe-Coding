@@ -1,0 +1,11 @@
+  - Verification 단계 방향
+      - system test는 GoogleTest가 아니라, 이미 GitHub에 구현되어 있는 기존 simulator만 사용한다.
+      - unit test는 GoogleTest 기반으로 한다.
+      - system test용 simulator를 새로 구현하지 않는다.
+      - 기존 simulator infrastructure를 재사용한다.
+  - Simulator 연동 관련
+      - simulator를 redesign하거나 controller architecture를 rewrite하지 않는다.
+      - 현재 controller implementation과 기존 simulator interface 사이에 adapter layer를 만든다.
+      - 양쪽 시스템에 대한 intrusive change를 최소화한다.
+  - Coverage / SonarQube 관련
+      - unit test coverage를 확인한다.

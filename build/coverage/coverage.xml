@@ -1,0 +1,2534 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
+<coverage line-rate="0.7858439201451906" branch-rate="0.5698924731182796" lines-covered="433" lines-valid="551" branches-covered="106" branches-valid="186" complexity="0.0" timestamp="1779082693" version="gcovr 8.6">
+  <sources>
+    <source>/Users/whdydrnr/Documents/GitHub/rvc-ai</source>
+  </sources>
+  <packages>
+    <package name="include.rvc" line-rate="0.9142857142857143" branch-rate="0.5" complexity="0.0">
+      <classes>
+        <class name="AdapterTimer_hpp" filename="include/rvc/AdapterTimer.hpp" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+          <methods>
+            <method name="rvc::Timer::~Timer" signature="()" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="34" hits="4" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="35" hits="4" branch="false"/>
+                <line number="36" hits="4" branch="false"/>
+                <line number="37" hits="4" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="34" hits="4" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="35" hits="4" branch="false"/>
+            <line number="36" hits="4" branch="false"/>
+            <line number="37" hits="4" branch="false"/>
+          </lines>
+        </class>
+        <class name="CleaningManager_hpp" filename="include/rvc/CleaningManager.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="&lt;unknown function 38&gt;" signature="" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="38" hits="2" branch="false"/>
+                <line number="39" hits="5" branch="false"/>
+                <line number="40" hits="2" branch="false"/>
+                <line number="43" hits="7" branch="false"/>
+                <line number="44" hits="7" branch="false"/>
+                <line number="45" hits="7" branch="false"/>
+                <line number="46" hits="7" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="38" hits="2" branch="false"/>
+            <line number="39" hits="5" branch="false"/>
+            <line number="40" hits="2" branch="false"/>
+            <line number="43" hits="7" branch="false"/>
+            <line number="44" hits="7" branch="false"/>
+            <line number="45" hits="7" branch="false"/>
+            <line number="46" hits="7" branch="false"/>
+          </lines>
+        </class>
+        <class name="IAvoidStrategy_hpp" filename="include/rvc/IAvoidStrategy.hpp" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="rvc::IAvoidStrategy::IAvoidStrategy" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IAvoidStrategy::~IAvoidStrategy" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="9" hits="0" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="IObstacleAvoidanceStrategy_hpp" filename="include/rvc/IObstacleAvoidanceStrategy.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="rvc::IObstacleAvoidanceStrategy::IObstacleAvoidanceStrategy" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IObstacleAvoidanceStrategy::~IObstacleAvoidanceStrategy" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="9" hits="2" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="2" branch="false"/>
+          </lines>
+        </class>
+        <class name="Interfaces_hpp" filename="include/rvc/Interfaces.hpp" line-rate="0.7777777777777778" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="rvc::IFrontObstacleSensor::IFrontObstacleSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IFrontObstacleSensor::~IFrontObstacleSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="14" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ISideObstacleSensor::ISideObstacleSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::ISideObstacleSensor::~ISideObstacleSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="23" hits="5" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IDustSensor::IDustSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IDustSensor::~IDustSensor" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="32" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IObstacleSensor::IObstacleSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IObstacleSensor::~IObstacleSensor" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="41" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IMotor::IMotor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IMotor::~IMotor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="51" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ICleaner::ICleaner" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::ICleaner::~ICleaner" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="59" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IMovementMotor::IMovementMotor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IMovementMotor::~IMovementMotor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="67" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ICleaningMotor::ICleaningMotor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::ICleaningMotor::~ICleaningMotor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="78" hits="7" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ITimer::ITimer" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::ITimer::~ITimer" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="87" hits="4" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="6" branch="false"/>
+            <line number="23" hits="5" branch="false"/>
+            <line number="32" hits="0" branch="false"/>
+            <line number="41" hits="0" branch="false"/>
+            <line number="51" hits="3" branch="false"/>
+            <line number="59" hits="3" branch="false"/>
+            <line number="67" hits="6" branch="false"/>
+            <line number="78" hits="7" branch="false"/>
+            <line number="87" hits="4" branch="false"/>
+          </lines>
+        </class>
+        <class name="LegacyAdapters_hpp" filename="include/rvc/LegacyAdapters.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods/>
+          <lines/>
+        </class>
+        <class name="MovementManager_hpp" filename="include/rvc/MovementManager.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="&lt;unknown function 31&gt;" signature="" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="31" hits="2" branch="false"/>
+                <line number="32" hits="4" branch="false"/>
+                <line number="33" hits="4" branch="false"/>
+                <line number="36" hits="6" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="31" hits="2" branch="false"/>
+            <line number="32" hits="4" branch="false"/>
+            <line number="33" hits="4" branch="false"/>
+            <line number="36" hits="6" branch="false"/>
+          </lines>
+        </class>
+        <class name="RvcController_hpp" filename="include/rvc/RvcController.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="rvc::IRvcState::IRvcState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::IRvcState::~IRvcState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="15" hits="18" branch="false"/>
+                <line number="62" hits="5" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="18" branch="false"/>
+            <line number="62" hits="5" branch="false"/>
+          </lines>
+        </class>
+        <class name="SensorSubjects_hpp" filename="include/rvc/SensorSubjects.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="rvc::ISensorObserver::ISensorObserver" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::ISensorObserver::~ISensorObserver" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="11" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ISensorSubject::ISensorSubject" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::ISensorSubject::~ISensorSubject" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="18" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ObstacleSensorSubject::~ObstacleSensorSubject" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="37" hits="3" branch="false"/>
+                <line number="38" hits="3" branch="false"/>
+                <line number="39" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::~DustSensorSubject" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="55" hits="3" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="2" branch="false"/>
+            <line number="18" hits="6" branch="false"/>
+            <line number="37" hits="3" branch="false"/>
+            <line number="38" hits="3" branch="false"/>
+            <line number="39" hits="3" branch="false"/>
+            <line number="55" hits="3" branch="false"/>
+          </lines>
+        </class>
+        <class name="SimulatorApi_hpp" filename="include/rvc/SimulatorApi.hpp" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+          <methods>
+            <method name="&lt;unknown function 58&gt;" signature="" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="58" hits="2" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="58" hits="2" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="src" line-rate="0.7771317829457365" branch-rate="0.5706521739130435" complexity="0.0">
+      <classes>
+        <class name="AdapterTimer_cpp" filename="src/AdapterTimer.cpp" line-rate="0.13157894736842105" branch-rate="0.0" complexity="0.0">
+          <methods>
+            <method name="rvc::Timer::Timer" signature="(std::__1::function&lt;long long ()&gt;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="8" hits="8" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::start" signature="(std::__1::chrono::duration&lt;long long, std::__1::ratio&lt;1l, 1000l&gt;&gt;)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="10" hits="0" branch="false"/>
+                <line number="11" hits="0" branch="false"/>
+                <line number="12" hits="0" branch="false"/>
+                <line number="13" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::start" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="15" hits="0" branch="false"/>
+                <line number="16" hits="0" branch="false"/>
+                <line number="17" hits="0" branch="false"/>
+                <line number="18" hits="0" branch="false"/>
+                <line number="19" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::stop" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="21" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::reset" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="23" hits="4" branch="false"/>
+                <line number="24" hits="4" branch="false"/>
+                <line number="25" hits="4" branch="false"/>
+                <line number="26" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::expired" signature="() const" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="28" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::isExpired" signature="() const" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="30" hits="0" branch="false"/>
+                <line number="31" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="32" hits="0" branch="false"/>
+                <line number="34" hits="0" branch="false"/>
+                <line number="35" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::isRunning" signature="() const" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="37" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::setDuration" signature="(long long)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="39" hits="0" branch="false"/>
+                <line number="40" hits="0" branch="false"/>
+                <line number="41" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::setCallback" signature="(std::__1::function&lt;void ()&gt;)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="43" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::update" signature="()" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="45" hits="0" branch="false"/>
+                <line number="46" hits="0" branch="true" condition-coverage="0% (0/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="47" hits="0" branch="false"/>
+                <line number="49" hits="0" branch="false"/>
+                <line number="50" hits="0" branch="false"/>
+                <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="52" hits="0" branch="false"/>
+                <line number="53" hits="0" branch="false"/>
+                <line number="54" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::Timer::defaultClock" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="56" hits="0" branch="false"/>
+                <line number="57" hits="0" branch="false"/>
+                <line number="58" hits="0" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="8" branch="false"/>
+            <line number="10" hits="0" branch="false"/>
+            <line number="11" hits="0" branch="false"/>
+            <line number="12" hits="0" branch="false"/>
+            <line number="13" hits="0" branch="false"/>
+            <line number="15" hits="0" branch="false"/>
+            <line number="16" hits="0" branch="false"/>
+            <line number="17" hits="0" branch="false"/>
+            <line number="18" hits="0" branch="false"/>
+            <line number="19" hits="0" branch="false"/>
+            <line number="21" hits="0" branch="false"/>
+            <line number="23" hits="4" branch="false"/>
+            <line number="24" hits="4" branch="false"/>
+            <line number="25" hits="4" branch="false"/>
+            <line number="26" hits="4" branch="false"/>
+            <line number="28" hits="0" branch="false"/>
+            <line number="30" hits="0" branch="false"/>
+            <line number="31" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="32" hits="0" branch="false"/>
+            <line number="34" hits="0" branch="false"/>
+            <line number="35" hits="0" branch="false"/>
+            <line number="37" hits="0" branch="false"/>
+            <line number="39" hits="0" branch="false"/>
+            <line number="40" hits="0" branch="false"/>
+            <line number="41" hits="0" branch="false"/>
+            <line number="43" hits="0" branch="false"/>
+            <line number="45" hits="0" branch="false"/>
+            <line number="46" hits="0" branch="true" condition-coverage="0% (0/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="47" hits="0" branch="false"/>
+            <line number="49" hits="0" branch="false"/>
+            <line number="50" hits="0" branch="false"/>
+            <line number="51" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="52" hits="0" branch="false"/>
+            <line number="53" hits="0" branch="false"/>
+            <line number="54" hits="0" branch="false"/>
+            <line number="56" hits="0" branch="false"/>
+            <line number="57" hits="0" branch="false"/>
+            <line number="58" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="CleaningManager_cpp" filename="src/CleaningManager.cpp" line-rate="0.8192771084337349" branch-rate="0.7692307692307693" complexity="0.0">
+          <methods>
+            <method name="rvc::CleaningManager::CleaningManager" signature="(rvc::ICleaningMotor&amp;, rvc::IDustSensor&amp;, rvc::ITimer&amp;, std::__1::chrono::duration&lt;long long, std::__1::ratio&lt;1l, 1000l&gt;&gt;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="7" hits="15" branch="false"/>
+                <line number="9" hits="15" branch="false"/>
+                <line number="10" hits="10" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::CleaningManager" signature="(rvc::ICleaner&amp;, std::__1::function&lt;long long ()&gt;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="12" hits="4" branch="false"/>
+                <line number="13" hits="4" branch="false"/>
+                <line number="14" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::start" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="16" hits="6" branch="false"/>
+                <line number="17" hits="6" branch="false"/>
+                <line number="18" hits="6" branch="false"/>
+                <line number="19" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::startCleaning" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="21" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::stop" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="23" hits="2" branch="false"/>
+                <line number="24" hits="2" branch="false"/>
+                <line number="25" hits="2" branch="false"/>
+                <line number="26" hits="2" branch="false"/>
+                <line number="27" hits="2" branch="false"/>
+                <line number="28" hits="2" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="29" hits="1" branch="false"/>
+                <line number="30" hits="1" branch="false"/>
+                <line number="32" hits="1" branch="false"/>
+                <line number="33" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::stopCleaning" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="35" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::powerUp" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="37" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::handleDustDetected" signature="(bool)" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="39" hits="0" branch="false"/>
+                <line number="40" hits="0" branch="false"/>
+                <line number="41" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="42" hits="0" branch="false"/>
+                <line number="43" hits="0" branch="false"/>
+                <line number="44" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::update" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="46" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::onDustDetected" signature="(rvc::MovementState)" line-rate="0.9" branch-rate="0.75" complexity="0.0">
+              <lines>
+                <line number="48" hits="3" branch="false"/>
+                <line number="49" hits="3" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="50" hits="0" branch="false"/>
+                <line number="53" hits="3" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="54" hits="1" branch="false"/>
+                <line number="55" hits="1" branch="false"/>
+                <line number="56" hits="1" branch="false"/>
+                <line number="59" hits="2" branch="false"/>
+                <line number="60" hits="2" branch="false"/>
+                <line number="61" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::onMovementStateChanged" signature="(rvc::MovementState)" line-rate="0.9090909090909091" branch-rate="0.8333333333333334" complexity="0.0">
+              <lines>
+                <line number="63" hits="12" branch="false"/>
+                <line number="64" hits="12" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="65" hits="0" branch="false"/>
+                <line number="68" hits="12" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="69" hits="5" branch="false"/>
+                <line number="70" hits="5" branch="false"/>
+                <line number="73" hits="7" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="74" hits="2" branch="false"/>
+                <line number="75" hits="2" branch="false"/>
+                <line number="76" hits="2" branch="false"/>
+                <line number="77" hits="12" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::tick" signature="()" line-rate="1.0" branch-rate="0.875" complexity="0.0">
+              <lines>
+                <line number="79" hits="6" branch="false"/>
+                <line number="80" hits="6" branch="true" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="81" hits="3" branch="false"/>
+                <line number="84" hits="3" branch="false"/>
+                <line number="85" hits="3" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="86" hits="3" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="87" hits="1" branch="false"/>
+                <line number="88" hits="1" branch="false"/>
+                <line number="91" hits="2" branch="false"/>
+                <line number="92" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::currentState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="94" hits="12" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::getPowerLevel" signature="() const" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="96" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::getLatestDustDetected" signature="() const" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="98" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::pendingPowerUp" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="100" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::enterNormal" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="102" hits="15" branch="false"/>
+                <line number="103" hits="15" branch="false"/>
+                <line number="104" hits="15" branch="false"/>
+                <line number="105" hits="15" branch="false"/>
+                <line number="106" hits="15" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="107" hits="14" branch="false"/>
+                <line number="108" hits="14" branch="false"/>
+                <line number="110" hits="1" branch="false"/>
+                <line number="111" hits="15" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningManager::enterPowerUp" signature="()" line-rate="0.8888888888888888" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="113" hits="3" branch="false"/>
+                <line number="114" hits="3" branch="false"/>
+                <line number="115" hits="3" branch="false"/>
+                <line number="116" hits="3" branch="false"/>
+                <line number="117" hits="3" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="118" hits="3" branch="false"/>
+                <line number="119" hits="3" branch="false"/>
+                <line number="121" hits="0" branch="false"/>
+                <line number="122" hits="3" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="15" branch="false"/>
+            <line number="9" hits="15" branch="false"/>
+            <line number="10" hits="10" branch="false"/>
+            <line number="12" hits="4" branch="false"/>
+            <line number="13" hits="4" branch="false"/>
+            <line number="14" hits="6" branch="false"/>
+            <line number="16" hits="6" branch="false"/>
+            <line number="17" hits="6" branch="false"/>
+            <line number="18" hits="6" branch="false"/>
+            <line number="19" hits="6" branch="false"/>
+            <line number="21" hits="0" branch="false"/>
+            <line number="23" hits="2" branch="false"/>
+            <line number="24" hits="2" branch="false"/>
+            <line number="25" hits="2" branch="false"/>
+            <line number="26" hits="2" branch="false"/>
+            <line number="27" hits="2" branch="false"/>
+            <line number="28" hits="2" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="29" hits="1" branch="false"/>
+            <line number="30" hits="1" branch="false"/>
+            <line number="32" hits="1" branch="false"/>
+            <line number="33" hits="2" branch="false"/>
+            <line number="35" hits="0" branch="false"/>
+            <line number="37" hits="0" branch="false"/>
+            <line number="39" hits="0" branch="false"/>
+            <line number="40" hits="0" branch="false"/>
+            <line number="41" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="42" hits="0" branch="false"/>
+            <line number="43" hits="0" branch="false"/>
+            <line number="44" hits="0" branch="false"/>
+            <line number="46" hits="0" branch="false"/>
+            <line number="48" hits="3" branch="false"/>
+            <line number="49" hits="3" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="50" hits="0" branch="false"/>
+            <line number="53" hits="3" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="54" hits="1" branch="false"/>
+            <line number="55" hits="1" branch="false"/>
+            <line number="56" hits="1" branch="false"/>
+            <line number="59" hits="2" branch="false"/>
+            <line number="60" hits="2" branch="false"/>
+            <line number="61" hits="3" branch="false"/>
+            <line number="63" hits="12" branch="false"/>
+            <line number="64" hits="12" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="65" hits="0" branch="false"/>
+            <line number="68" hits="12" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="69" hits="5" branch="false"/>
+            <line number="70" hits="5" branch="false"/>
+            <line number="73" hits="7" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="74" hits="2" branch="false"/>
+            <line number="75" hits="2" branch="false"/>
+            <line number="76" hits="2" branch="false"/>
+            <line number="77" hits="12" branch="false"/>
+            <line number="79" hits="6" branch="false"/>
+            <line number="80" hits="6" branch="true" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="81" hits="3" branch="false"/>
+            <line number="84" hits="3" branch="false"/>
+            <line number="85" hits="3" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="86" hits="3" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="87" hits="1" branch="false"/>
+            <line number="88" hits="1" branch="false"/>
+            <line number="91" hits="2" branch="false"/>
+            <line number="92" hits="6" branch="false"/>
+            <line number="94" hits="12" branch="false"/>
+            <line number="96" hits="0" branch="false"/>
+            <line number="98" hits="0" branch="false"/>
+            <line number="100" hits="3" branch="false"/>
+            <line number="102" hits="15" branch="false"/>
+            <line number="103" hits="15" branch="false"/>
+            <line number="104" hits="15" branch="false"/>
+            <line number="105" hits="15" branch="false"/>
+            <line number="106" hits="15" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="107" hits="14" branch="false"/>
+            <line number="108" hits="14" branch="false"/>
+            <line number="110" hits="1" branch="false"/>
+            <line number="111" hits="15" branch="false"/>
+            <line number="113" hits="3" branch="false"/>
+            <line number="114" hits="3" branch="false"/>
+            <line number="115" hits="3" branch="false"/>
+            <line number="116" hits="3" branch="false"/>
+            <line number="117" hits="3" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="118" hits="3" branch="false"/>
+            <line number="119" hits="3" branch="false"/>
+            <line number="121" hits="0" branch="false"/>
+            <line number="122" hits="3" branch="false"/>
+          </lines>
+        </class>
+        <class name="LeftPriorityAvoidanceStrategy_cpp" filename="src/LeftPriorityAvoidanceStrategy.cpp" line-rate="1.0" branch-rate="0.8571428571428571" complexity="0.0">
+          <methods>
+            <method name="rvc::LeftPriorityAvoidanceStrategy::decideOnFrontObstacle" signature="(rvc::SideObstacleSnapshot const&amp;) const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="5" hits="11" branch="false"/>
+                <line number="7" hits="11" branch="true" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="8" hits="4" branch="false"/>
+                <line number="10" hits="7" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="11" hits="2" branch="false"/>
+                <line number="13" hits="5" branch="false"/>
+                <line number="14" hits="11" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::LeftPriorityAvoidanceStrategy::decideWhileBackward" signature="(rvc::SideObstacleSnapshot const&amp;, rvc::SideObstacleSnapshot const&amp;) const" line-rate="1.0" branch-rate="0.75" complexity="0.0">
+              <lines>
+                <line number="16" hits="5" branch="false"/>
+                <line number="19" hits="5" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="20" hits="5" branch="false"/>
+                <line number="21" hits="5" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="23" hits="5" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="24" hits="3" branch="false"/>
+                <line number="26" hits="2" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="27" hits="1" branch="false"/>
+                <line number="29" hits="1" branch="false"/>
+                <line number="30" hits="5" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="11" branch="false"/>
+            <line number="7" hits="11" branch="true" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="8" hits="4" branch="false"/>
+            <line number="10" hits="7" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="11" hits="2" branch="false"/>
+            <line number="13" hits="5" branch="false"/>
+            <line number="14" hits="11" branch="false"/>
+            <line number="16" hits="5" branch="false"/>
+            <line number="19" hits="5" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="20" hits="5" branch="false"/>
+            <line number="21" hits="5" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="23" hits="5" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="24" hits="3" branch="false"/>
+            <line number="26" hits="2" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="27" hits="1" branch="false"/>
+            <line number="29" hits="1" branch="false"/>
+            <line number="30" hits="5" branch="false"/>
+          </lines>
+        </class>
+        <class name="LegacyAdapters_cpp" filename="src/LegacyAdapters.cpp" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+          <methods>
+            <method name="rvc::CombinedFrontObstacleSensorAdapter::CombinedFrontObstacleSensorAdapter" signature="(rvc::IObstacleSensor&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="7" hits="9" branch="false"/>
+                <line number="8" hits="9" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedFrontObstacleSensorAdapter::initialize" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="10" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedFrontObstacleSensorAdapter::shutdown" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="12" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedFrontObstacleSensorAdapter::registerInterruptHandler" signature="(std::__1::function&lt;void ()&gt;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="14" hits="2" branch="false"/>
+                <line number="15" hits="2" branch="false"/>
+                <line number="16" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedFrontObstacleSensorAdapter::triggerInterrupt" signature="()" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="18" hits="1" branch="false"/>
+                <line number="19" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="20" hits="1" branch="false"/>
+                <line number="21" hits="1" branch="false"/>
+                <line number="22" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedSideObstacleSensorAdapter::CombinedSideObstacleSensorAdapter" signature="(rvc::IObstacleSensor&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="24" hits="6" branch="false"/>
+                <line number="25" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedSideObstacleSensorAdapter::initialize" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="27" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedSideObstacleSensorAdapter::shutdown" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="29" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CombinedSideObstacleSensorAdapter::read" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="31" hits="1" branch="false"/>
+                <line number="32" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementMotorAdapter::MovementMotorAdapter" signature="(rvc::IMotor&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="35" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementMotorAdapter::stop" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="37" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementMotorAdapter::moveForward" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="39" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementMotorAdapter::moveBackward" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="41" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementMotorAdapter::turnLeft" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="43" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementMotorAdapter::turnRight" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="45" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningMotorAdapter::CleaningMotorAdapter" signature="(rvc::ICleaner&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="47" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningMotorAdapter::off" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="49" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningMotorAdapter::normal" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="51" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::CleaningMotorAdapter::powerUp" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="53" hits="1" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="9" branch="false"/>
+            <line number="8" hits="9" branch="false"/>
+            <line number="10" hits="2" branch="false"/>
+            <line number="12" hits="1" branch="false"/>
+            <line number="14" hits="2" branch="false"/>
+            <line number="15" hits="2" branch="false"/>
+            <line number="16" hits="2" branch="false"/>
+            <line number="18" hits="1" branch="false"/>
+            <line number="19" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="20" hits="1" branch="false"/>
+            <line number="21" hits="1" branch="false"/>
+            <line number="22" hits="1" branch="false"/>
+            <line number="24" hits="6" branch="false"/>
+            <line number="25" hits="6" branch="false"/>
+            <line number="27" hits="2" branch="false"/>
+            <line number="29" hits="1" branch="false"/>
+            <line number="31" hits="1" branch="false"/>
+            <line number="32" hits="1" branch="false"/>
+            <line number="35" hits="6" branch="false"/>
+            <line number="37" hits="1" branch="false"/>
+            <line number="39" hits="1" branch="false"/>
+            <line number="41" hits="1" branch="false"/>
+            <line number="43" hits="1" branch="false"/>
+            <line number="45" hits="1" branch="false"/>
+            <line number="47" hits="6" branch="false"/>
+            <line number="49" hits="1" branch="false"/>
+            <line number="51" hits="1" branch="false"/>
+            <line number="53" hits="1" branch="false"/>
+          </lines>
+        </class>
+        <class name="MovementManager_cpp" filename="src/MovementManager.cpp" line-rate="0.6119402985074627" branch-rate="0.35" complexity="0.0">
+          <methods>
+            <method name="rvc::MovementManager::MovementManager" signature="(rvc::IMovementMotor&amp;, rvc::ITimer&amp;, std::__1::chrono::duration&lt;long long, std::__1::ratio&lt;1l, 1000l&gt;&gt;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="6" hits="12" branch="false"/>
+                <line number="8" hits="16" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::MovementManager" signature="(rvc::IMotor&amp;, rvc::IAvoidStrategy&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="10" hits="4" branch="false"/>
+                <line number="11" hits="2" branch="false"/>
+                <line number="12" hits="2" branch="false"/>
+                <line number="13" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::stop" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="15" hits="4" branch="false"/>
+                <line number="16" hits="4" branch="false"/>
+                <line number="17" hits="4" branch="false"/>
+                <line number="18" hits="4" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="19" hits="3" branch="false"/>
+                <line number="20" hits="3" branch="false"/>
+                <line number="22" hits="1" branch="false"/>
+                <line number="23" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::moveForward" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="25" hits="6" branch="false"/>
+                <line number="26" hits="6" branch="false"/>
+                <line number="27" hits="6" branch="false"/>
+                <line number="28" hits="6" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="29" hits="5" branch="false"/>
+                <line number="30" hits="5" branch="false"/>
+                <line number="32" hits="1" branch="false"/>
+                <line number="33" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::moveBackward" signature="()" line-rate="0.875" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="35" hits="1" branch="false"/>
+                <line number="36" hits="1" branch="false"/>
+                <line number="37" hits="1" branch="false"/>
+                <line number="38" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="39" hits="1" branch="false"/>
+                <line number="40" hits="1" branch="false"/>
+                <line number="42" hits="0" branch="false"/>
+                <line number="43" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::turnLeft" signature="()" line-rate="0.875" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="45" hits="3" branch="false"/>
+                <line number="46" hits="3" branch="false"/>
+                <line number="47" hits="3" branch="false"/>
+                <line number="48" hits="3" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="49" hits="3" branch="false"/>
+                <line number="50" hits="3" branch="false"/>
+                <line number="52" hits="0" branch="false"/>
+                <line number="53" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::turnRight" signature="()" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="55" hits="0" branch="false"/>
+                <line number="56" hits="0" branch="false"/>
+                <line number="57" hits="0" branch="false"/>
+                <line number="58" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="59" hits="0" branch="false"/>
+                <line number="60" hits="0" branch="false"/>
+                <line number="62" hits="0" branch="false"/>
+                <line number="63" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::turn" signature="(rvc::Direction)" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="65" hits="0" branch="false"/>
+                <line number="66" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="67" hits="0" branch="false"/>
+                <line number="68" hits="0" branch="false"/>
+                <line number="70" hits="0" branch="false"/>
+                <line number="71" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::executeAvoidance" signature="(bool, bool, bool)" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="73" hits="0" branch="false"/>
+                <line number="74" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="75" hits="0" branch="false"/>
+                <line number="76" hits="0" branch="false"/>
+                <line number="78" hits="0" branch="false"/>
+                <line number="79" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::needsReverse" signature="(bool, bool, bool) const" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="81" hits="0" branch="false"/>
+                <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::isTurnComplete" signature="() const" line-rate="0.6666666666666666" branch-rate="0.25" complexity="0.0">
+              <lines>
+                <line number="85" hits="4" branch="false"/>
+                <line number="86" hits="4" branch="true" condition-coverage="25% (1/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="25%"/>
+                  </conditions>
+                </line>
+                <line number="87" hits="0" branch="false"/>
+                <line number="88" hits="0" branch="false"/>
+                <line number="90" hits="4" branch="false"/>
+                <line number="91" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::MovementManager::currentCommand" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="93" hits="6" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="12" branch="false"/>
+            <line number="8" hits="16" branch="false"/>
+            <line number="10" hits="4" branch="false"/>
+            <line number="11" hits="2" branch="false"/>
+            <line number="12" hits="2" branch="false"/>
+            <line number="13" hits="4" branch="false"/>
+            <line number="15" hits="4" branch="false"/>
+            <line number="16" hits="4" branch="false"/>
+            <line number="17" hits="4" branch="false"/>
+            <line number="18" hits="4" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="19" hits="3" branch="false"/>
+            <line number="20" hits="3" branch="false"/>
+            <line number="22" hits="1" branch="false"/>
+            <line number="23" hits="4" branch="false"/>
+            <line number="25" hits="6" branch="false"/>
+            <line number="26" hits="6" branch="false"/>
+            <line number="27" hits="6" branch="false"/>
+            <line number="28" hits="6" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="29" hits="5" branch="false"/>
+            <line number="30" hits="5" branch="false"/>
+            <line number="32" hits="1" branch="false"/>
+            <line number="33" hits="6" branch="false"/>
+            <line number="35" hits="1" branch="false"/>
+            <line number="36" hits="1" branch="false"/>
+            <line number="37" hits="1" branch="false"/>
+            <line number="38" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="39" hits="1" branch="false"/>
+            <line number="40" hits="1" branch="false"/>
+            <line number="42" hits="0" branch="false"/>
+            <line number="43" hits="1" branch="false"/>
+            <line number="45" hits="3" branch="false"/>
+            <line number="46" hits="3" branch="false"/>
+            <line number="47" hits="3" branch="false"/>
+            <line number="48" hits="3" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="49" hits="3" branch="false"/>
+            <line number="50" hits="3" branch="false"/>
+            <line number="52" hits="0" branch="false"/>
+            <line number="53" hits="3" branch="false"/>
+            <line number="55" hits="0" branch="false"/>
+            <line number="56" hits="0" branch="false"/>
+            <line number="57" hits="0" branch="false"/>
+            <line number="58" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="59" hits="0" branch="false"/>
+            <line number="60" hits="0" branch="false"/>
+            <line number="62" hits="0" branch="false"/>
+            <line number="63" hits="0" branch="false"/>
+            <line number="65" hits="0" branch="false"/>
+            <line number="66" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="67" hits="0" branch="false"/>
+            <line number="68" hits="0" branch="false"/>
+            <line number="70" hits="0" branch="false"/>
+            <line number="71" hits="0" branch="false"/>
+            <line number="73" hits="0" branch="false"/>
+            <line number="74" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="75" hits="0" branch="false"/>
+            <line number="76" hits="0" branch="false"/>
+            <line number="78" hits="0" branch="false"/>
+            <line number="79" hits="0" branch="false"/>
+            <line number="81" hits="0" branch="false"/>
+            <line number="82" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="85" hits="4" branch="false"/>
+            <line number="86" hits="4" branch="true" condition-coverage="25% (1/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="25%"/>
+              </conditions>
+            </line>
+            <line number="87" hits="0" branch="false"/>
+            <line number="88" hits="0" branch="false"/>
+            <line number="90" hits="4" branch="false"/>
+            <line number="91" hits="4" branch="false"/>
+            <line number="93" hits="6" branch="false"/>
+          </lines>
+        </class>
+        <class name="RvcController_cpp" filename="src/RvcController.cpp" line-rate="0.9466666666666667" branch-rate="0.5833333333333334" complexity="0.0">
+          <methods>
+            <method name="rvc::IRvcState::onEnter" signature="(rvc::RvcController&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="5" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IRvcState::startCleaning" signature="(rvc::RvcController&amp;)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="7" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IRvcState::stopCleaning" signature="(rvc::RvcController&amp;)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="9" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IRvcState::onFrontObstacleDetected" signature="(rvc::RvcController&amp;)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="11" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IRvcState::onDustDetected" signature="(rvc::RvcController&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="13" hits="1" branch="false"/>
+                <line number="14" hits="1" branch="false"/>
+                <line number="15" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::IRvcState::tick" signature="(rvc::RvcController&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="17" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::RvcController" signature="(rvc::IFrontObstacleSensor&amp;, rvc::ISideObstacleSensor&amp;, rvc::IDustSensor&amp;, rvc::MovementManager&amp;, rvc::CleaningManager&amp;, rvc::IObstacleAvoidanceStrategy&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="19" hits="15" branch="false"/>
+                <line number="23" hits="5" branch="false"/>
+                <line number="24" hits="5" branch="false"/>
+                <line number="25" hits="15" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::startCleaning" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="27" hits="4" branch="false"/>
+                <line number="28" hits="4" branch="false"/>
+                <line number="29" hits="4" branch="false"/>
+                <line number="30" hits="4" branch="false"/>
+                <line number="31" hits="4" branch="false"/>
+                <line number="32" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::stopCleaning" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="34" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::onFrontObstacleDetected" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="36" hits="2" branch="false"/>
+                <line number="37" hits="2" branch="false"/>
+                <line number="38" hits="2" branch="false"/>
+                <line number="39" hits="2" branch="false"/>
+                <line number="40" hits="2" branch="false"/>
+                <line number="41" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::onDustDetected" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="43" hits="1" branch="false"/>
+                <line number="44" hits="1" branch="false"/>
+                <line number="45" hits="1" branch="false"/>
+                <line number="46" hits="1" branch="false"/>
+                <line number="47" hits="1" branch="false"/>
+                <line number="48" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::tick" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="50" hits="4" branch="false"/>
+                <line number="51" hits="4" branch="false"/>
+                <line number="52" hits="4" branch="false"/>
+                <line number="53" hits="4" branch="false"/>
+                <line number="54" hits="4" branch="false"/>
+                <line number="55" hits="4" branch="false"/>
+                <line number="56" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::changeState" signature="(std::__1::unique_ptr&lt;rvc::IRvcState, std::__1::default_delete&lt;rvc::IRvcState&gt;&gt;)" line-rate="0.8333333333333334" branch-rate="0.25" complexity="0.0">
+              <lines>
+                <line number="58" hits="11" branch="false"/>
+                <line number="59" hits="11" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="60" hits="11" branch="false"/>
+                <line number="61" hits="11" branch="false"/>
+                <line number="64" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="65" hits="11" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::enterState" signature="(std::__1::unique_ptr&lt;rvc::IRvcState, std::__1::default_delete&lt;rvc::IRvcState&gt;&gt;)" line-rate="1.0" branch-rate="0.75" complexity="0.0">
+              <lines>
+                <line number="67" hits="9" branch="false"/>
+                <line number="68" hits="9" branch="false"/>
+                <line number="69" hits="9" branch="false"/>
+                <line number="70" hits="11" branch="false"/>
+                <line number="71" hits="11" branch="false"/>
+                <line number="72" hits="11" branch="false"/>
+                <line number="74" hits="11" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="75" hits="9" branch="false"/>
+                <line number="78" hits="2" branch="false"/>
+                <line number="79" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="80" hits="9" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::enterPendingStateIfNeeded" signature="()" line-rate="1.0" branch-rate="0.75" complexity="0.0">
+              <lines>
+                <line number="82" hits="11" branch="false"/>
+                <line number="83" hits="11" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="84" hits="9" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="85" hits="9" branch="false"/>
+                <line number="86" hits="11" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::performStop" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="88" hits="2" branch="false"/>
+                <line number="89" hits="2" branch="false"/>
+                <line number="90" hits="2" branch="false"/>
+                <line number="91" hits="2" branch="false"/>
+                <line number="92" hits="2" branch="false"/>
+                <line number="93" hits="2" branch="false"/>
+                <line number="94" hits="2" branch="false"/>
+                <line number="95" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::movementState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="97" hits="10" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::frontSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="99" hits="8" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::sideSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="101" hits="7" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::dustSensor" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="103" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::movementManager" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="105" hits="13" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::cleaningManager" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="107" hits="16" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RvcController::avoidanceStrategy" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="109" hits="3" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="3" branch="false"/>
+            <line number="7" hits="0" branch="false"/>
+            <line number="9" hits="0" branch="false"/>
+            <line number="11" hits="0" branch="false"/>
+            <line number="13" hits="1" branch="false"/>
+            <line number="14" hits="1" branch="false"/>
+            <line number="15" hits="1" branch="false"/>
+            <line number="17" hits="1" branch="false"/>
+            <line number="19" hits="15" branch="false"/>
+            <line number="23" hits="5" branch="false"/>
+            <line number="24" hits="5" branch="false"/>
+            <line number="25" hits="15" branch="false"/>
+            <line number="27" hits="4" branch="false"/>
+            <line number="28" hits="4" branch="false"/>
+            <line number="29" hits="4" branch="false"/>
+            <line number="30" hits="4" branch="false"/>
+            <line number="31" hits="4" branch="false"/>
+            <line number="32" hits="4" branch="false"/>
+            <line number="34" hits="2" branch="false"/>
+            <line number="36" hits="2" branch="false"/>
+            <line number="37" hits="2" branch="false"/>
+            <line number="38" hits="2" branch="false"/>
+            <line number="39" hits="2" branch="false"/>
+            <line number="40" hits="2" branch="false"/>
+            <line number="41" hits="2" branch="false"/>
+            <line number="43" hits="1" branch="false"/>
+            <line number="44" hits="1" branch="false"/>
+            <line number="45" hits="1" branch="false"/>
+            <line number="46" hits="1" branch="false"/>
+            <line number="47" hits="1" branch="false"/>
+            <line number="48" hits="1" branch="false"/>
+            <line number="50" hits="4" branch="false"/>
+            <line number="51" hits="4" branch="false"/>
+            <line number="52" hits="4" branch="false"/>
+            <line number="53" hits="4" branch="false"/>
+            <line number="54" hits="4" branch="false"/>
+            <line number="55" hits="4" branch="false"/>
+            <line number="56" hits="4" branch="false"/>
+            <line number="58" hits="11" branch="false"/>
+            <line number="59" hits="11" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="60" hits="11" branch="false"/>
+            <line number="61" hits="11" branch="false"/>
+            <line number="64" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="65" hits="11" branch="false"/>
+            <line number="67" hits="9" branch="false"/>
+            <line number="68" hits="9" branch="false"/>
+            <line number="69" hits="9" branch="false"/>
+            <line number="70" hits="11" branch="false"/>
+            <line number="71" hits="11" branch="false"/>
+            <line number="72" hits="11" branch="false"/>
+            <line number="74" hits="11" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="75" hits="9" branch="false"/>
+            <line number="78" hits="2" branch="false"/>
+            <line number="79" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="80" hits="9" branch="false"/>
+            <line number="82" hits="11" branch="false"/>
+            <line number="83" hits="11" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="84" hits="9" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="85" hits="9" branch="false"/>
+            <line number="86" hits="11" branch="false"/>
+            <line number="88" hits="2" branch="false"/>
+            <line number="89" hits="2" branch="false"/>
+            <line number="90" hits="2" branch="false"/>
+            <line number="91" hits="2" branch="false"/>
+            <line number="92" hits="2" branch="false"/>
+            <line number="93" hits="2" branch="false"/>
+            <line number="94" hits="2" branch="false"/>
+            <line number="95" hits="2" branch="false"/>
+            <line number="97" hits="10" branch="false"/>
+            <line number="99" hits="8" branch="false"/>
+            <line number="101" hits="7" branch="false"/>
+            <line number="103" hits="4" branch="false"/>
+            <line number="105" hits="13" branch="false"/>
+            <line number="107" hits="16" branch="false"/>
+            <line number="109" hits="3" branch="false"/>
+          </lines>
+        </class>
+        <class name="RvcStates_cpp" filename="src/RvcStates.cpp" line-rate="0.8148148148148148" branch-rate="0.4666666666666667" complexity="0.0">
+          <methods>
+            <method name="rvc::(anonymous namespace)::OffState::OffState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::OffState::~OffState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::OffState::startCleaning" signature="(rvc::RvcController&amp;)" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="8" hits="4" branch="false"/>
+                <line number="9" hits="4" branch="false"/>
+                <line number="10" hits="4" branch="false"/>
+                <line number="11" hits="4" branch="false"/>
+                <line number="12" hits="8" branch="true" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::OffState::startCleaning(rvc::RvcController&amp;)::'lambda'()::operator()" signature="() const" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="13" hits="6" branch="false"/>
+                <line number="14" hits="4" branch="false"/>
+                <line number="15" hits="4" branch="false"/>
+                <line number="16" hits="4" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="17" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::OffState::movementState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="19" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::ForwardState::ForwardState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::ForwardState::~ForwardState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::ForwardState::onEnter" signature="(rvc::RvcController&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="24" hits="6" branch="false"/>
+                <line number="25" hits="6" branch="false"/>
+                <line number="26" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::ForwardState::onFrontObstacleDetected" signature="(rvc::RvcController&amp;)" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="28" hits="2" branch="false"/>
+                <line number="29" hits="2" branch="false"/>
+                <line number="30" hits="2" branch="false"/>
+                <line number="31" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="32" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::ForwardState::onDustDetected" signature="(rvc::RvcController&amp;)" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="34" hits="0" branch="false"/>
+                <line number="35" hits="0" branch="false"/>
+                <line number="36" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::ForwardState::movementState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="38" hits="5" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::StoppedForObstacleState::StoppedForObstacleState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::StoppedForObstacleState::~StoppedForObstacleState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="41" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::StoppedForObstacleState::onEnter" signature="(rvc::RvcController&amp;)" line-rate="0.7777777777777778" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="43" hits="2" branch="false"/>
+                <line number="44" hits="2" branch="false"/>
+                <line number="45" hits="2" branch="false"/>
+                <line number="46" hits="2" branch="false"/>
+                <line number="48" hits="2" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="49" hits="1" branch="false"/>
+                <line number="50" hits="1" branch="false"/>
+                <line number="51" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="52" hits="1" branch="false"/>
+                <line number="55" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="56" hits="0" branch="false"/>
+                <line number="57" hits="0" branch="false"/>
+                <line number="58" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="59" hits="0" branch="false"/>
+                <line number="62" hits="1" branch="false"/>
+                <line number="63" hits="1" branch="false"/>
+                <line number="64" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="65" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::StoppedForObstacleState::movementState" signature="() const" line-rate="0.3333333333333333" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="67" hits="0" branch="false"/>
+                <line number="68" hits="0" branch="false"/>
+                <line number="72" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::TurningState::~TurningState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::TurningState::TurningState" signature="(rvc::AvoidanceAction)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="77" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::TurningState::tick" signature="(rvc::RvcController&amp;)" line-rate="0.8333333333333334" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="79" hits="2" branch="false"/>
+                <line number="80" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="81" hits="0" branch="false"/>
+                <line number="84" hits="2" branch="false"/>
+                <line number="85" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="86" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::TurningState::movementState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="88" hits="2" branch="false"/>
+                <line number="89" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::BackwardState::~BackwardState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines/>
+            </method>
+            <method name="rvc::(anonymous namespace)::BackwardState::BackwardState" signature="(rvc::SideObstacleSnapshot)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="99" hits="2" branch="false"/>
+                <line number="100" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::BackwardState::tick" signature="(rvc::RvcController&amp;)" line-rate="0.6875" branch-rate="0.375" complexity="0.0">
+              <lines>
+                <line number="102" hits="1" branch="false"/>
+                <line number="103" hits="1" branch="false"/>
+                <line number="104" hits="2" branch="false"/>
+                <line number="105" hits="1" branch="false"/>
+                <line number="106" hits="1" branch="false"/>
+                <line number="108" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="109" hits="0" branch="false"/>
+                <line number="112" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="113" hits="0" branch="false"/>
+                <line number="114" hits="0" branch="false"/>
+                <line number="115" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="116" hits="0" branch="false"/>
+                <line number="119" hits="1" branch="false"/>
+                <line number="120" hits="1" branch="false"/>
+                <line number="121" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="122" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::(anonymous namespace)::BackwardState::movementState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="124" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::makeOffState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="132" hits="7" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::makeForwardState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="134" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::makeStoppedForObstacleState" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="136" hits="2" branch="false"/>
+                <line number="137" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::makeTurningState" signature="(rvc::AvoidanceAction)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="140" hits="2" branch="false"/>
+                <line number="141" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::makeBackwardState" signature="(rvc::SideObstacleSnapshot)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="144" hits="1" branch="false"/>
+                <line number="145" hits="1" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="4" branch="false"/>
+            <line number="9" hits="4" branch="false"/>
+            <line number="10" hits="4" branch="false"/>
+            <line number="11" hits="4" branch="false"/>
+            <line number="12" hits="8" branch="true" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="13" hits="6" branch="false"/>
+            <line number="14" hits="4" branch="false"/>
+            <line number="15" hits="4" branch="false"/>
+            <line number="16" hits="4" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="17" hits="4" branch="false"/>
+            <line number="19" hits="2" branch="false"/>
+            <line number="24" hits="6" branch="false"/>
+            <line number="25" hits="6" branch="false"/>
+            <line number="26" hits="6" branch="false"/>
+            <line number="28" hits="2" branch="false"/>
+            <line number="29" hits="2" branch="false"/>
+            <line number="30" hits="2" branch="false"/>
+            <line number="31" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="32" hits="2" branch="false"/>
+            <line number="34" hits="0" branch="false"/>
+            <line number="35" hits="0" branch="false"/>
+            <line number="36" hits="0" branch="false"/>
+            <line number="38" hits="5" branch="false"/>
+            <line number="41" hits="2" branch="false"/>
+            <line number="43" hits="2" branch="false"/>
+            <line number="44" hits="2" branch="false"/>
+            <line number="45" hits="2" branch="false"/>
+            <line number="46" hits="2" branch="false"/>
+            <line number="48" hits="2" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="49" hits="1" branch="false"/>
+            <line number="50" hits="1" branch="false"/>
+            <line number="51" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="52" hits="1" branch="false"/>
+            <line number="55" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="56" hits="0" branch="false"/>
+            <line number="57" hits="0" branch="false"/>
+            <line number="58" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="59" hits="0" branch="false"/>
+            <line number="62" hits="1" branch="false"/>
+            <line number="63" hits="1" branch="false"/>
+            <line number="64" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="65" hits="2" branch="false"/>
+            <line number="67" hits="0" branch="false"/>
+            <line number="68" hits="0" branch="false"/>
+            <line number="72" hits="2" branch="false"/>
+            <line number="77" hits="4" branch="false"/>
+            <line number="79" hits="2" branch="false"/>
+            <line number="80" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="81" hits="0" branch="false"/>
+            <line number="84" hits="2" branch="false"/>
+            <line number="85" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="86" hits="2" branch="false"/>
+            <line number="88" hits="2" branch="false"/>
+            <line number="89" hits="2" branch="false"/>
+            <line number="99" hits="2" branch="false"/>
+            <line number="100" hits="2" branch="false"/>
+            <line number="102" hits="1" branch="false"/>
+            <line number="103" hits="1" branch="false"/>
+            <line number="104" hits="2" branch="false"/>
+            <line number="105" hits="1" branch="false"/>
+            <line number="106" hits="1" branch="false"/>
+            <line number="108" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="109" hits="0" branch="false"/>
+            <line number="112" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="113" hits="0" branch="false"/>
+            <line number="114" hits="0" branch="false"/>
+            <line number="115" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="116" hits="0" branch="false"/>
+            <line number="119" hits="1" branch="false"/>
+            <line number="120" hits="1" branch="false"/>
+            <line number="121" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="122" hits="1" branch="false"/>
+            <line number="124" hits="2" branch="false"/>
+            <line number="132" hits="7" branch="false"/>
+            <line number="134" hits="6" branch="false"/>
+            <line number="136" hits="2" branch="false"/>
+            <line number="137" hits="2" branch="false"/>
+            <line number="140" hits="2" branch="false"/>
+            <line number="141" hits="2" branch="false"/>
+            <line number="144" hits="1" branch="false"/>
+            <line number="145" hits="1" branch="false"/>
+          </lines>
+        </class>
+        <class name="SensorSubjects_cpp" filename="src/SensorSubjects.cpp" line-rate="0.975609756097561" branch-rate="0.8" complexity="0.0">
+          <methods>
+            <method name="rvc::ObstacleSensorSubject::ObstacleSensorSubject" signature="(rvc::IObstacleSensor&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="7" hits="9" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ObstacleSensorSubject::attach" signature="(rvc::ISensorObserver*)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="9" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ObstacleSensorSubject::detach" signature="(rvc::ISensorObserver*)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="11" hits="2" branch="false"/>
+                <line number="12" hits="2" branch="false"/>
+                <line number="13" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ObstacleSensorSubject::notify" signature="()" line-rate="1.0" branch-rate="0.75" complexity="0.0">
+              <lines>
+                <line number="15" hits="2" branch="false"/>
+                <line number="16" hits="4" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="17" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="18" hits="2" branch="false"/>
+                <line number="19" hits="2" branch="false"/>
+                <line number="21" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ObstacleSensorSubject::poll" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="23" hits="2" branch="false"/>
+                <line number="24" hits="2" branch="false"/>
+                <line number="25" hits="2" branch="false"/>
+                <line number="26" hits="2" branch="false"/>
+                <line number="27" hits="2" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="28" hits="1" branch="false"/>
+                <line number="29" hits="1" branch="false"/>
+                <line number="30" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::ObstacleSensorSubject::onInterrupt" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="32" hits="1" branch="false"/>
+                <line number="33" hits="1" branch="false"/>
+                <line number="34" hits="1" branch="false"/>
+                <line number="35" hits="1" branch="false"/>
+                <line number="36" hits="1" branch="false"/>
+                <line number="37" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::DustSensorSubject" signature="(rvc::IDustSensor&amp;)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="39" hits="9" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::attach" signature="(rvc::ISensorObserver*)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="41" hits="3" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::detach" signature="(rvc::ISensorObserver*)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="43" hits="2" branch="false"/>
+                <line number="44" hits="2" branch="false"/>
+                <line number="45" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::notify" signature="()" line-rate="1.0" branch-rate="0.75" complexity="0.0">
+              <lines>
+                <line number="47" hits="2" branch="false"/>
+                <line number="48" hits="4" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="49" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="50" hits="2" branch="false"/>
+                <line number="51" hits="2" branch="false"/>
+                <line number="53" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::poll" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="55" hits="2" branch="false"/>
+                <line number="56" hits="2" branch="false"/>
+                <line number="57" hits="2" branch="false"/>
+                <line number="58" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DustSensorSubject::isDustDetected" signature="() const" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="60" hits="0" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="9" branch="false"/>
+            <line number="9" hits="3" branch="false"/>
+            <line number="11" hits="2" branch="false"/>
+            <line number="12" hits="2" branch="false"/>
+            <line number="13" hits="2" branch="false"/>
+            <line number="15" hits="2" branch="false"/>
+            <line number="16" hits="4" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="17" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="18" hits="2" branch="false"/>
+            <line number="19" hits="2" branch="false"/>
+            <line number="21" hits="2" branch="false"/>
+            <line number="23" hits="2" branch="false"/>
+            <line number="24" hits="2" branch="false"/>
+            <line number="25" hits="2" branch="false"/>
+            <line number="26" hits="2" branch="false"/>
+            <line number="27" hits="2" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="28" hits="1" branch="false"/>
+            <line number="29" hits="1" branch="false"/>
+            <line number="30" hits="2" branch="false"/>
+            <line number="32" hits="1" branch="false"/>
+            <line number="33" hits="1" branch="false"/>
+            <line number="34" hits="1" branch="false"/>
+            <line number="35" hits="1" branch="false"/>
+            <line number="36" hits="1" branch="false"/>
+            <line number="37" hits="1" branch="false"/>
+            <line number="39" hits="9" branch="false"/>
+            <line number="41" hits="3" branch="false"/>
+            <line number="43" hits="2" branch="false"/>
+            <line number="44" hits="2" branch="false"/>
+            <line number="45" hits="2" branch="false"/>
+            <line number="47" hits="2" branch="false"/>
+            <line number="48" hits="4" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="49" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="50" hits="2" branch="false"/>
+            <line number="51" hits="2" branch="false"/>
+            <line number="53" hits="2" branch="false"/>
+            <line number="55" hits="2" branch="false"/>
+            <line number="56" hits="2" branch="false"/>
+            <line number="57" hits="2" branch="false"/>
+            <line number="58" hits="2" branch="false"/>
+            <line number="60" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="SimulatorApi_cpp" filename="src/SimulatorApi.cpp" line-rate="0.7558139534883721" branch-rate="0.5806451612903226" complexity="0.0">
+          <methods>
+            <method name="rvc::DefaultAvoidStrategy::decideDirection" signature="(bool, bool, bool)" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="7" hits="5" branch="false"/>
+                <line number="8" hits="5" branch="false"/>
+                <line number="9" hits="5" branch="false"/>
+                <line number="10" hits="5" branch="false"/>
+                <line number="11" hits="5" branch="true" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="12" hits="1" branch="false"/>
+                <line number="14" hits="4" branch="true" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="15" hits="1" branch="false"/>
+                <line number="17" hits="3" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="18" hits="2" branch="false"/>
+                <line number="20" hits="1" branch="false"/>
+                <line number="21" hits="5" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::DefaultAvoidStrategy::needsReverse" signature="(bool, bool, bool)" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="23" hits="2" branch="false"/>
+                <line number="24" hits="2" branch="true" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::RVCController" signature="(rvc::IObstacleSensor&amp;, rvc::IDustSensor&amp;, rvc::IMotor&amp;, rvc::ICleaner&amp;, rvc::MovementManager&amp;, rvc::CleaningManager&amp;, rvc::ObstacleSensorSubject&amp;, rvc::DustSensorSubject&amp;)" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="27" hits="6" branch="false"/>
+                <line number="31" hits="2" branch="false"/>
+                <line number="32" hits="2" branch="false"/>
+                <line number="33" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="34" hits="2" branch="true" condition-coverage="50% (3/6)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="35" hits="4" branch="true" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="36" hits="6" branch="false"/>
+                <line number="37" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="38" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="39" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::~RVCController" signature="()" line-rate="1.0" branch-rate="0.5" complexity="0.0">
+              <lines>
+                <line number="41" hits="4" branch="false"/>
+                <line number="42" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="43" hits="2" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="44" hits="4" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::powerOn" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="46" hits="2" branch="false"/>
+                <line number="47" hits="2" branch="false"/>
+                <line number="48" hits="2" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="49" hits="1" branch="false"/>
+                <line number="50" hits="1" branch="false"/>
+                <line number="51" hits="1" branch="false"/>
+                <line number="52" hits="1" branch="false"/>
+                <line number="54" hits="1" branch="false"/>
+                <line number="55" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::powerOff" signature="()" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="57" hits="1" branch="false"/>
+                <line number="58" hits="1" branch="false"/>
+                <line number="59" hits="1" branch="false"/>
+                <line number="60" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::tick" signature="()" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="62" hits="0" branch="false"/>
+                <line number="63" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="64" hits="0" branch="false"/>
+                <line number="66" hits="0" branch="false"/>
+                <line number="67" hits="0" branch="false"/>
+                <line number="68" hits="0" branch="false"/>
+                <line number="69" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::onObstacleDetected" signature="(bool, bool, bool)" line-rate="0.5714285714285714" branch-rate="0.25" complexity="0.0">
+              <lines>
+                <line number="71" hits="1" branch="false"/>
+                <line number="72" hits="1" branch="true" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="73" hits="1" branch="false"/>
+                <line number="75" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="76" hits="0" branch="false"/>
+                <line number="77" hits="0" branch="false"/>
+                <line number="78" hits="1" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::onDustDetected" signature="(bool)" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+              <lines>
+                <line number="80" hits="0" branch="false"/>
+                <line number="81" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="82" hits="0" branch="false"/>
+                <line number="84" hits="0" branch="true" condition-coverage="0% (0/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="0%"/>
+                  </conditions>
+                </line>
+                <line number="85" hits="0" branch="false"/>
+                <line number="86" hits="0" branch="false"/>
+                <line number="87" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::movementState" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="89" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::isError" signature="() const" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="91" hits="6" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::coreController" signature="()" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="93" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::coreController" signature="() const" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+              <lines>
+                <line number="95" hits="0" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::RVCController::initializeDevices" signature="()" line-rate="1.0" branch-rate="0.7" complexity="0.0">
+              <lines>
+                <line number="97" hits="2" branch="false"/>
+                <line number="98" hits="5" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="99" hits="4" branch="false"/>
+                <line number="100" hits="4" branch="false"/>
+                <line number="101" hits="4" branch="false"/>
+                <line number="102" hits="4" branch="false"/>
+                <line number="103" hits="4" branch="true" condition-coverage="62% (5/8)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="62%"/>
+                  </conditions>
+                </line>
+                <line number="104" hits="1" branch="false"/>
+                <line number="106" hits="3" branch="false"/>
+                <line number="107" hits="1" branch="false"/>
+                <line number="108" hits="2" branch="false"/>
+              </lines>
+            </method>
+            <method name="rvc::current_state_name" signature="(rvc::RVCController&amp;)" line-rate="0.7777777777777778" branch-rate="0.6666666666666666" complexity="0.0">
+              <lines>
+                <line number="110" hits="3" branch="false"/>
+                <line number="111" hits="3" branch="true" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="100%"/>
+                  </conditions>
+                </line>
+                <line number="112" hits="1" branch="false"/>
+                <line number="114" hits="2" branch="true" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="0" type="jump" coverage="50%"/>
+                  </conditions>
+                </line>
+                <line number="116" hits="1" branch="false"/>
+                <line number="118" hits="1" branch="false"/>
+                <line number="123" hits="0" branch="false"/>
+                <line number="125" hits="0" branch="false"/>
+                <line number="126" hits="3" branch="false"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="5" branch="false"/>
+            <line number="8" hits="5" branch="false"/>
+            <line number="9" hits="5" branch="false"/>
+            <line number="10" hits="5" branch="false"/>
+            <line number="11" hits="5" branch="true" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="12" hits="1" branch="false"/>
+            <line number="14" hits="4" branch="true" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="15" hits="1" branch="false"/>
+            <line number="17" hits="3" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="18" hits="2" branch="false"/>
+            <line number="20" hits="1" branch="false"/>
+            <line number="21" hits="5" branch="false"/>
+            <line number="23" hits="2" branch="false"/>
+            <line number="24" hits="2" branch="true" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="27" hits="6" branch="false"/>
+            <line number="31" hits="2" branch="false"/>
+            <line number="32" hits="2" branch="false"/>
+            <line number="33" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="34" hits="2" branch="true" condition-coverage="50% (3/6)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="35" hits="4" branch="true" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="36" hits="6" branch="false"/>
+            <line number="37" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="38" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="39" hits="4" branch="false"/>
+            <line number="41" hits="4" branch="false"/>
+            <line number="42" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="43" hits="2" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="44" hits="4" branch="false"/>
+            <line number="46" hits="2" branch="false"/>
+            <line number="47" hits="2" branch="false"/>
+            <line number="48" hits="2" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="49" hits="1" branch="false"/>
+            <line number="50" hits="1" branch="false"/>
+            <line number="51" hits="1" branch="false"/>
+            <line number="52" hits="1" branch="false"/>
+            <line number="54" hits="1" branch="false"/>
+            <line number="55" hits="2" branch="false"/>
+            <line number="57" hits="1" branch="false"/>
+            <line number="58" hits="1" branch="false"/>
+            <line number="59" hits="1" branch="false"/>
+            <line number="60" hits="1" branch="false"/>
+            <line number="62" hits="0" branch="false"/>
+            <line number="63" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="64" hits="0" branch="false"/>
+            <line number="66" hits="0" branch="false"/>
+            <line number="67" hits="0" branch="false"/>
+            <line number="68" hits="0" branch="false"/>
+            <line number="69" hits="0" branch="false"/>
+            <line number="71" hits="1" branch="false"/>
+            <line number="72" hits="1" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="73" hits="1" branch="false"/>
+            <line number="75" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="76" hits="0" branch="false"/>
+            <line number="77" hits="0" branch="false"/>
+            <line number="78" hits="1" branch="false"/>
+            <line number="80" hits="0" branch="false"/>
+            <line number="81" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="82" hits="0" branch="false"/>
+            <line number="84" hits="0" branch="true" condition-coverage="0% (0/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="0%"/>
+              </conditions>
+            </line>
+            <line number="85" hits="0" branch="false"/>
+            <line number="86" hits="0" branch="false"/>
+            <line number="87" hits="0" branch="false"/>
+            <line number="89" hits="2" branch="false"/>
+            <line number="91" hits="6" branch="false"/>
+            <line number="93" hits="0" branch="false"/>
+            <line number="95" hits="0" branch="false"/>
+            <line number="97" hits="2" branch="false"/>
+            <line number="98" hits="5" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="99" hits="4" branch="false"/>
+            <line number="100" hits="4" branch="false"/>
+            <line number="101" hits="4" branch="false"/>
+            <line number="102" hits="4" branch="false"/>
+            <line number="103" hits="4" branch="true" condition-coverage="62% (5/8)">
+              <conditions>
+                <condition number="0" type="jump" coverage="62%"/>
+              </conditions>
+            </line>
+            <line number="104" hits="1" branch="false"/>
+            <line number="106" hits="3" branch="false"/>
+            <line number="107" hits="1" branch="false"/>
+            <line number="108" hits="2" branch="false"/>
+            <line number="110" hits="3" branch="false"/>
+            <line number="111" hits="3" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="112" hits="1" branch="false"/>
+            <line number="114" hits="2" branch="true" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="116" hits="1" branch="false"/>
+            <line number="118" hits="1" branch="false"/>
+            <line number="123" hits="0" branch="false"/>
+            <line number="125" hits="0" branch="false"/>
+            <line number="126" hits="3" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

@@ -1,0 +1,219 @@
+Start testing: May 18 13:53 KST
+----------------------------------------------------------
+1/8 Testing: LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement
+1/8 Test: LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LeftPriorityAvoidanceStrategyTest
+[ RUN      ] LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement
+[       OK ] LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement (0 ms)
+[----------] 1 test from LeftPriorityAvoidanceStrategyTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement" end time: May 18 13:53 KST
+"LeftPriorityAvoidanceStrategyTest.DecidesTurnDirectionAndBackwardMovement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/8 Testing: LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward
+2/8 Test: LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LeftPriorityAvoidanceStrategyTest
+[ RUN      ] LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward
+[       OK ] LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward (0 ms)
+[----------] 1 test from LeftPriorityAvoidanceStrategyTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward" end time: May 18 13:53 KST
+"LeftPriorityAvoidanceStrategyTest.DecidesDirectionWhileBackward" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/8 Testing: CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected
+3/8 Test: CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CleaningManagerTest
+[ RUN      ] CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected
+[       OK ] CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected (0 ms)
+[----------] 1 test from CleaningManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected" end time: May 18 13:53 KST
+"CleaningManagerTest.ExtendsPowerUpWhenDustIsStillDetected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/8 Testing: CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance
+4/8 Test: CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CleaningManagerTest
+[ RUN      ] CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance
+[       OK ] CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance (0 ms)
+[----------] 1 test from CleaningManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance" end time: May 18 13:53 KST
+"CleaningManagerTest.DefersPowerUpWhenDustIsDetectedDuringAvoidance" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/8 Testing: MovementManagerTest.ReportsTurnCompletionAfterTimerExpires
+5/8 Test: MovementManagerTest.ReportsTurnCompletionAfterTimerExpires
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=MovementManagerTest.ReportsTurnCompletionAfterTimerExpires" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"MovementManagerTest.ReportsTurnCompletionAfterTimerExpires" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = MovementManagerTest.ReportsTurnCompletionAfterTimerExpires
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MovementManagerTest
+[ RUN      ] MovementManagerTest.ReportsTurnCompletionAfterTimerExpires
+[       OK ] MovementManagerTest.ReportsTurnCompletionAfterTimerExpires (0 ms)
+[----------] 1 test from MovementManagerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MovementManagerTest.ReportsTurnCompletionAfterTimerExpires" end time: May 18 13:53 KST
+"MovementManagerTest.ReportsTurnCompletionAfterTimerExpires" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/8 Testing: RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces
+6/8 Test: RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RvcControllerTest
+[ RUN      ] RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces
+[       OK ] RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces (0 ms)
+[----------] 1 test from RvcControllerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces" end time: May 18 13:53 KST
+"RvcControllerTest.StartStopInitializesAndShutsDownExternalInterfaces" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/8 Testing: RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward
+7/8 Test: RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RvcControllerTest
+[ RUN      ] RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward
+[       OK ] RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward (0 ms)
+[----------] 1 test from RvcControllerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward" end time: May 18 13:53 KST
+"RvcControllerTest.FrontObstacleOnlyTurnsLeftThenMovesForward" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/8 Testing: RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly
+8/8 Test: RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly
+Command: "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/rvc_unit_tests" "--gtest_filter=RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly" "--gtest_also_run_disabled_tests"
+Directory: /Users/whdydrnr/Documents/GitHub/rvc-ai/build
+"RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly" start time: May 18 13:53 KST
+Output:
+----------------------------------------------------------
+Running main() from /private/tmp/googletest-20250910-5249-qce8ci/googletest-1.17.0/googletest/src/gtest_main.cc
+Note: Google Test filter = RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RvcControllerTest
+[ RUN      ] RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly
+[       OK ] RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly (0 ms)
+[----------] 1 test from RvcControllerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly" end time: May 18 13:53 KST
+"RvcControllerTest.MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 18 13:53 KST
