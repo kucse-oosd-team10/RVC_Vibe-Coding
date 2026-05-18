@@ -4,16 +4,19 @@
 
 namespace rvc {
 
-ObstacleSensorSubject::ObstacleSensorSubject(IObstacleSensor &sensor) : sensor_{sensor} {}
+ObstacleSensorSubject::ObstacleSensorSubject(IObstacleSensor& sensor) : sensor_{sensor} {
+}
 
-void ObstacleSensorSubject::attach(ISensorObserver *observer) { observers_.push_back(observer); }
+void ObstacleSensorSubject::attach(ISensorObserver* observer) {
+    observers_.push_back(observer);
+}
 
-void ObstacleSensorSubject::detach(ISensorObserver *observer) {
+void ObstacleSensorSubject::detach(ISensorObserver* observer) {
     observers_.erase(std::remove(observers_.begin(), observers_.end(), observer), observers_.end());
 }
 
 void ObstacleSensorSubject::notify() {
-    for (auto *observer : observers_) {
+    for (auto* observer : observers_) {
         if (observer != nullptr) {
             observer->onObstacleDetected(front_, left_, right_);
         }
@@ -36,16 +39,19 @@ void ObstacleSensorSubject::onInterrupt() {
     notify();
 }
 
-DustSensorSubject::DustSensorSubject(IDustSensor &sensor) : sensor_{sensor} {}
+DustSensorSubject::DustSensorSubject(IDustSensor& sensor) : sensor_{sensor} {
+}
 
-void DustSensorSubject::attach(ISensorObserver *observer) { observers_.push_back(observer); }
+void DustSensorSubject::attach(ISensorObserver* observer) {
+    observers_.push_back(observer);
+}
 
-void DustSensorSubject::detach(ISensorObserver *observer) {
+void DustSensorSubject::detach(ISensorObserver* observer) {
     observers_.erase(std::remove(observers_.begin(), observers_.end(), observer), observers_.end());
 }
 
 void DustSensorSubject::notify() {
-    for (auto *observer : observers_) {
+    for (auto* observer : observers_) {
         if (observer != nullptr) {
             observer->onDustDetected(dustDetected_);
         }
@@ -57,6 +63,8 @@ void DustSensorSubject::poll() {
     notify();
 }
 
-bool DustSensorSubject::isDustDetected() const { return dustDetected_; }
+bool DustSensorSubject::isDustDetected() const {
+    return dustDetected_;
+}
 
 } // namespace rvc

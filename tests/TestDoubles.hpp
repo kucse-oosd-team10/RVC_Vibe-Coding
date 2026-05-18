@@ -10,7 +10,7 @@
 namespace rvc::test {
 
 class FakeTimer final : public ITimer {
-  public:
+public:
     void start(std::chrono::milliseconds duration) override {
         duration_ = duration;
         running_ = true;
@@ -18,7 +18,9 @@ class FakeTimer final : public ITimer {
         startCount_ += 1;
     }
 
-    bool expired() const override { return running_ && expired_; }
+    bool expired() const override {
+        return running_ && expired_;
+    }
 
     void reset() override {
         running_ = false;
@@ -31,11 +33,15 @@ class FakeTimer final : public ITimer {
         }
     }
 
-    [[nodiscard]] int startCount() const { return startCount_; }
+    [[nodiscard]] int startCount() const {
+        return startCount_;
+    }
 
-    [[nodiscard]] std::chrono::milliseconds duration() const { return duration_; }
+    [[nodiscard]] std::chrono::milliseconds duration() const {
+        return duration_;
+    }
 
-  private:
+private:
     std::chrono::milliseconds duration_{0};
     bool running_{false};
     bool expired_{false};
@@ -43,7 +49,7 @@ class FakeTimer final : public ITimer {
 };
 
 class FakeFrontObstacleSensor final : public IFrontObstacleSensor {
-  public:
+public:
     bool initialize() override {
         initialized = true;
         initializeCount += 1;
@@ -72,7 +78,7 @@ class FakeFrontObstacleSensor final : public IFrontObstacleSensor {
 };
 
 class FakeSideObstacleSensor final : public ISideObstacleSensor {
-  public:
+public:
     bool initialize() override {
         initialized = true;
         initializeCount += 1;
@@ -82,6 +88,10 @@ class FakeSideObstacleSensor final : public ISideObstacleSensor {
     void shutdown() override {
         initialized = false;
         shutdownCount += 1;
+    }
+
+    void setCurrentSnapshot(SideObstacleSnapshot snapshot) {
+        currentSnapshot = snapshot;
     }
 
     SideObstacleSnapshot read() override {
@@ -104,7 +114,7 @@ class FakeSideObstacleSensor final : public ISideObstacleSensor {
 };
 
 class FakeDustSensor final : public IDustSensor {
-  public:
+public:
     bool initialize() override {
         initialized = true;
         initializeCount += 1;
@@ -121,6 +131,10 @@ class FakeDustSensor final : public IDustSensor {
         return dustDetected;
     }
 
+    void setDustDetected(bool detected) {
+        dustDetected = detected;
+    }
+
     bool initialized{false};
     bool dustDetected{false};
     int initializeCount{0};
@@ -129,16 +143,26 @@ class FakeDustSensor final : public IDustSensor {
 };
 
 class FakeMovementMotor final : public IMovementMotor {
-  public:
-    void stop() override { commands.push_back(MovementCommand::Stop); }
+public:
+    void stop() override {
+        commands.push_back(MovementCommand::Stop);
+    }
 
-    void moveForward() override { commands.push_back(MovementCommand::Forward); }
+    void moveForward() override {
+        commands.push_back(MovementCommand::Forward);
+    }
 
-    void moveBackward() override { commands.push_back(MovementCommand::Backward); }
+    void moveBackward() override {
+        commands.push_back(MovementCommand::Backward);
+    }
 
-    void turnLeft() override { commands.push_back(MovementCommand::TurnLeft); }
+    void turnLeft() override {
+        commands.push_back(MovementCommand::TurnLeft);
+    }
 
-    void turnRight() override { commands.push_back(MovementCommand::TurnRight); }
+    void turnRight() override {
+        commands.push_back(MovementCommand::TurnRight);
+    }
 
     [[nodiscard]] MovementCommand lastCommand() const {
         return commands.empty() ? MovementCommand::Stop : commands.back();
@@ -148,12 +172,18 @@ class FakeMovementMotor final : public IMovementMotor {
 };
 
 class FakeCleaningMotor final : public ICleaningMotor {
-  public:
-    void off() override { states.push_back(CleaningState::Off); }
+public:
+    void off() override {
+        states.push_back(CleaningState::Off);
+    }
 
-    void normal() override { states.push_back(CleaningState::Normal); }
+    void normal() override {
+        states.push_back(CleaningState::Normal);
+    }
 
-    void powerUp() override { states.push_back(CleaningState::PowerUp); }
+    void powerUp() override {
+        states.push_back(CleaningState::PowerUp);
+    }
 
     [[nodiscard]] CleaningState lastState() const {
         return states.empty() ? CleaningState::Off : states.back();
@@ -163,7 +193,7 @@ class FakeCleaningMotor final : public ICleaningMotor {
 };
 
 class FakeObstacleSensor final : public IObstacleSensor {
-  public:
+public:
     bool initialize() override {
         initializeCount += 1;
         if (initializeFailuresRemaining > 0) {
@@ -189,6 +219,12 @@ class FakeObstacleSensor final : public IObstacleSensor {
         return rightDetected;
     }
 
+    void setDetected(bool front, bool left, bool right) {
+        frontDetected = front;
+        leftDetected = left;
+        rightDetected = right;
+    }
+
     bool initialized{false};
     bool frontDetected{false};
     bool leftDetected{false};
@@ -201,7 +237,7 @@ class FakeObstacleSensor final : public IObstacleSensor {
 };
 
 class FakeSimulatorMotor final : public IMotor {
-  public:
+public:
     bool initialize() override {
         initializeCount += 1;
         if (initializeFailuresRemaining > 0) {
@@ -212,7 +248,9 @@ class FakeSimulatorMotor final : public IMotor {
         return true;
     }
 
-    void move(Direction direction) override { commands.push_back(direction); }
+    void move(Direction direction) override {
+        commands.push_back(direction);
+    }
 
     [[nodiscard]] Direction lastCommand() const {
         return commands.empty() ? Direction::STOP : commands.back();
@@ -225,7 +263,7 @@ class FakeSimulatorMotor final : public IMotor {
 };
 
 class FakeCleaner final : public ICleaner {
-  public:
+public:
     bool initialize() override {
         initializeCount += 1;
         if (initializeFailuresRemaining > 0) {
@@ -236,7 +274,9 @@ class FakeCleaner final : public ICleaner {
         return true;
     }
 
-    void setPower(PowerLevel level) override { levels.push_back(level); }
+    void setPower(PowerLevel level) override {
+        levels.push_back(level);
+    }
 
     [[nodiscard]] PowerLevel lastPower() const {
         return levels.empty() ? PowerLevel::OFF : levels.back();

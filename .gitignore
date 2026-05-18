@@ -1,0 +1,6 @@
+build/
+coverage-report/
+cppcheck-report.xml
+*.profraw
+*.profdata
+.DS_Store

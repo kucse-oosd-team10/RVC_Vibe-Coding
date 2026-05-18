@@ -4,21 +4,25 @@
 
 namespace rvc {
 
-CleaningManager::CleaningManager(ICleaningMotor &cleaningMotor, IDustSensor &dustSensor,
-                                 ITimer &powerUpTimer, std::chrono::milliseconds powerUpDuration)
+CleaningManager::CleaningManager(ICleaningMotor& cleaningMotor, IDustSensor& dustSensor,
+                                 ITimer& powerUpTimer, std::chrono::milliseconds powerUpDuration)
     : cleaningMotor_{&cleaningMotor}, dustSensor_{&dustSensor}, powerUpTimer_{&powerUpTimer},
-      powerUpDuration_{powerUpDuration} {}
+      powerUpDuration_{powerUpDuration} {
+}
 
-CleaningManager::CleaningManager(ICleaner &cleaner, Timer::ClockFn clockFn)
+CleaningManager::CleaningManager(ICleaner& cleaner, Timer::ClockFn clockFn)
     : cleaner_{&cleaner}, ownedPowerUpTimer_{std::make_unique<Timer>(std::move(clockFn))},
-      powerUpTimer_{ownedPowerUpTimer_.get()}, powerUpDuration_{kDefaultPowerUpDuration} {}
+      powerUpTimer_{ownedPowerUpTimer_.get()}, powerUpDuration_{kDefaultPowerUpDuration} {
+}
 
 void CleaningManager::start() {
     pendingPowerUp_ = false;
     enterNormal();
 }
 
-void CleaningManager::startCleaning() { start(); }
+void CleaningManager::startCleaning() {
+    start();
+}
 
 void CleaningManager::stop() {
     pendingPowerUp_ = false;
@@ -32,9 +36,13 @@ void CleaningManager::stop() {
     cleaner_->setPower(PowerLevel::OFF);
 }
 
-void CleaningManager::stopCleaning() { stop(); }
+void CleaningManager::stopCleaning() {
+    stop();
+}
 
-void CleaningManager::powerUp() { enterPowerUp(); }
+void CleaningManager::powerUp() {
+    enterPowerUp();
+}
 
 void CleaningManager::handleDustDetected(bool detected) {
     latestDustDetected_ = detected;
@@ -43,7 +51,9 @@ void CleaningManager::handleDustDetected(bool detected) {
     }
 }
 
-void CleaningManager::update() { tick(); }
+void CleaningManager::update() {
+    tick();
+}
 
 void CleaningManager::onDustDetected(MovementState movementState) {
     if (currentState_ == CleaningState::Off) {
@@ -91,13 +101,21 @@ void CleaningManager::tick() {
     enterNormal();
 }
 
-CleaningState CleaningManager::currentState() const { return currentState_; }
+CleaningState CleaningManager::currentState() const {
+    return currentState_;
+}
 
-PowerLevel CleaningManager::getPowerLevel() const { return powerLevel_; }
+PowerLevel CleaningManager::getPowerLevel() const {
+    return powerLevel_;
+}
 
-bool CleaningManager::getLatestDustDetected() const { return latestDustDetected_; }
+bool CleaningManager::getLatestDustDetected() const {
+    return latestDustDetected_;
+}
 
-bool CleaningManager::pendingPowerUp() const { return pendingPowerUp_; }
+bool CleaningManager::pendingPowerUp() const {
+    return pendingPowerUp_;
+}
 
 void CleaningManager::enterNormal() {
     powerUpTimer_->reset();

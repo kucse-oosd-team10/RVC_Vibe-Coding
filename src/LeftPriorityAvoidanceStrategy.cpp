@@ -3,7 +3,7 @@
 namespace rvc {
 
 AvoidanceAction LeftPriorityAvoidanceStrategy::decideOnFrontObstacle(
-    const SideObstacleSnapshot &sideSnapshot) const {
+    const SideObstacleSnapshot& sideSnapshot) const {
     if (sideSnapshot.leftDetected && sideSnapshot.rightDetected) {
         return AvoidanceAction::MoveBackward;
     }
@@ -14,8 +14,8 @@ AvoidanceAction LeftPriorityAvoidanceStrategy::decideOnFrontObstacle(
 }
 
 AvoidanceAction LeftPriorityAvoidanceStrategy::decideWhileBackward(
-    const SideObstacleSnapshot &previousSideSnapshot,
-    const SideObstacleSnapshot &currentSideSnapshot) const {
+    const SideObstacleSnapshot& previousSideSnapshot,
+    const SideObstacleSnapshot& currentSideSnapshot) const {
     const bool leftCleared = previousSideSnapshot.leftDetected && !currentSideSnapshot.leftDetected;
     const bool rightCleared =
         previousSideSnapshot.rightDetected && !currentSideSnapshot.rightDetected;

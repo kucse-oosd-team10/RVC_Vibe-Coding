@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/whdydrnr/Documents/GitHub/rvc-ai/build/cmake_install.cmake",
-		"/Users/whdydrnr/Documents/GitHub/rvc-ai/build/_deps/pybind11-build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

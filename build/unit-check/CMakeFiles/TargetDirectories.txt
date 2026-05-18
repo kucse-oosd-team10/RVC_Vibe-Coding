@@ -1,5 +1,0 @@
-/Users/whdydrnr/Documents/GitHub/rvc-ai/build/unit-check/CMakeFiles/rvc_controller.dir
-/Users/whdydrnr/Documents/GitHub/rvc-ai/build/unit-check/CMakeFiles/rvc_unit_tests.dir
-/Users/whdydrnr/Documents/GitHub/rvc-ai/build/unit-check/CMakeFiles/test.dir
-/Users/whdydrnr/Documents/GitHub/rvc-ai/build/unit-check/CMakeFiles/edit_cache.dir
-/Users/whdydrnr/Documents/GitHub/rvc-ai/build/unit-check/CMakeFiles/rebuild_cache.dir
