@@ -1,4 +1,3 @@
-#include "TestDoubles.hpp"
 #include "rvc/CleaningManager.hpp"
 #include "rvc/IObstacleAvoidanceStrategy.hpp"
 #include "rvc/LegacyAdapters.hpp"
@@ -8,6 +7,8 @@
 #include "rvc/SimulatorApi.hpp"
 
 #include <gtest/gtest.h>
+
+#include "TestDoubles.hpp"
 
 using namespace rvc;
 using namespace rvc::test;
@@ -59,13 +60,13 @@ TEST(CleaningManagerTest, ExtendsPowerUpWhenDustIsStillDetected) {
     EXPECT_EQ(manager.currentState(), CleaningState::PowerUp);
     EXPECT_EQ(cleaningMotor.lastState(), CleaningState::PowerUp);
 
-    dustSensor.dustDetected = true;
+    dustSensor.setDustDetected(true);
     powerTimer.expire();
     manager.tick();
     EXPECT_EQ(manager.currentState(), CleaningState::PowerUp);
     EXPECT_EQ(powerTimer.startCount(), 2);
 
-    dustSensor.dustDetected = false;
+    dustSensor.setDustDetected(false);
     powerTimer.expire();
     manager.tick();
     EXPECT_EQ(manager.currentState(), CleaningState::Normal);
@@ -103,13 +104,14 @@ TEST(MovementManagerTest, ReportsTurnCompletionAfterTimerExpires) {
 
 TEST(LegacyAdaptersTest, TranslateCombinedSensorAndMotorInterfaces) {
     FakeObstacleSensor obstacleSensor;
-    obstacleSensor.leftDetected = true;
-    obstacleSensor.rightDetected = false;
+    obstacleSensor.setDetected(false, true, false);
     CombinedFrontObstacleSensorAdapter frontAdapter{obstacleSensor};
     CombinedSideObstacleSensorAdapter sideAdapter{obstacleSensor};
 
     bool interruptHandled = false;
-    frontAdapter.registerInterruptHandler([&interruptHandled] { interruptHandled = true; });
+    frontAdapter.registerInterruptHandler([&interruptHandled] {
+        interruptHandled = true;
+    });
 
     EXPECT_TRUE(frontAdapter.initialize());
     EXPECT_TRUE(sideAdapter.initialize());
@@ -152,7 +154,7 @@ TEST(LegacyAdaptersTest, TranslatesCleaningPowerLevels) {
 }
 
 class RecordingObserver final : public ISensorObserver {
-  public:
+public:
     void onObstacleDetected(bool front, bool left, bool right) override {
         obstacleEvents += 1;
         lastFront = front;
@@ -182,8 +184,7 @@ TEST(SensorSubjectsTest, NotifyOnlyFrontObstacleAndAlwaysPublishDustPolling) {
     obstacleSubject.poll();
     EXPECT_EQ(observer.obstacleEvents, 0);
 
-    obstacleSensor.frontDetected = true;
-    obstacleSensor.leftDetected = true;
+    obstacleSensor.setDetected(true, true, false);
     obstacleSubject.poll();
     EXPECT_EQ(observer.obstacleEvents, 1);
     EXPECT_TRUE(observer.lastFront);
@@ -198,7 +199,7 @@ TEST(SensorSubjectsTest, NotifyOnlyFrontObstacleAndAlwaysPublishDustPolling) {
     EXPECT_EQ(observer.dustEvents, 1);
     EXPECT_FALSE(observer.lastDust);
 
-    dustSensor.dustDetected = true;
+    dustSensor.setDustDetected(true);
     dustSubject.poll();
     EXPECT_EQ(observer.dustEvents, 2);
     EXPECT_TRUE(observer.lastDust);
@@ -248,7 +249,7 @@ TEST(RvcControllerTest, FrontObstacleOnlyTurnsLeftThenMovesForward) {
     RvcController controller{frontSensor, sideSensor, dustSensor, movement, cleaning, strategy};
 
     controller.startCleaning();
-    sideSensor.currentSnapshot = {false, false};
+    sideSensor.setCurrentSnapshot({false, false});
     frontSensor.triggerInterrupt();
     EXPECT_EQ(controller.movementState(), MovementState::TurningLeft);
     EXPECT_EQ(movement.currentCommand(), MovementCommand::TurnLeft);
@@ -276,7 +277,7 @@ TEST(RvcControllerTest, MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly) 
     controller.startCleaning();
     EXPECT_EQ(controller.movementState(), MovementState::Forward);
 
-    sideSensor.currentSnapshot = {true, true};
+    sideSensor.setCurrentSnapshot({true, true});
     frontSensor.triggerInterrupt();
     EXPECT_EQ(controller.movementState(), MovementState::Backward);
     EXPECT_EQ(movement.currentCommand(), MovementCommand::Backward);
@@ -285,7 +286,7 @@ TEST(RvcControllerTest, MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly) 
     EXPECT_EQ(cleaning.currentState(), CleaningState::Normal);
     EXPECT_TRUE(cleaning.pendingPowerUp());
 
-    sideSensor.currentSnapshot = {false, true};
+    sideSensor.setCurrentSnapshot({false, true});
     controller.tick();
     EXPECT_EQ(controller.movementState(), MovementState::TurningLeft);
 
@@ -294,7 +295,7 @@ TEST(RvcControllerTest, MockBasedObstacleEscapeScenarioIsCoveredByUnitTestOnly) 
     EXPECT_EQ(controller.movementState(), MovementState::Forward);
     EXPECT_EQ(cleaning.currentState(), CleaningState::PowerUp);
 
-    dustSensor.dustDetected = false;
+    dustSensor.setDustDetected(false);
     powerTimer.expire();
     controller.tick();
     EXPECT_EQ(cleaning.currentState(), CleaningState::Normal);
@@ -307,7 +308,9 @@ TEST(SimulatorRVCControllerAdapterTest, PowerOnInitializesDevicesAndStartsCoreCo
     FakeCleaner cleaner;
     DefaultAvoidStrategy simulatorStrategy;
     MovementManager movementManager{motor, simulatorStrategy};
-    CleaningManager cleaningManager{cleaner, [] { return 0; }};
+    CleaningManager cleaningManager{cleaner, [] {
+                                        return 0;
+                                    }};
     ObstacleSensorSubject obstacleSubject{obstacleSensor};
     DustSensorSubject dustSubject{dustSensor};
     RVCController controller{obstacleSensor,  dustSensor,      motor,           cleaner,
@@ -335,7 +338,9 @@ TEST(SimulatorRVCControllerAdapterTest, EntersErrorWhenDeviceInitializationRetri
     motor.initializeFailuresRemaining = 3;
     DefaultAvoidStrategy simulatorStrategy;
     MovementManager movementManager{motor, simulatorStrategy};
-    CleaningManager cleaningManager{cleaner, [] { return 0; }};
+    CleaningManager cleaningManager{cleaner, [] {
+                                        return 0;
+                                    }};
     ObstacleSensorSubject obstacleSubject{obstacleSensor};
     DustSensorSubject dustSubject{dustSensor};
     RVCController controller{obstacleSensor,  dustSensor,      motor,           cleaner,
@@ -351,7 +356,7 @@ TEST(SimulatorRVCControllerAdapterTest, EntersErrorWhenDeviceInitializationRetri
     ASSERT_FALSE(cleaner.levels.empty());
     EXPECT_EQ(cleaner.levels.back(), PowerLevel::OFF);
 
-    obstacleSensor.frontDetected = true;
+    obstacleSensor.setDetected(true, false, false);
     obstacleSubject.onInterrupt();
     EXPECT_EQ(motor.commands.back(), Direction::STOP);
 

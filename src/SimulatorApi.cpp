@@ -24,10 +24,10 @@ bool DefaultAvoidStrategy::needsReverse(bool front, bool left, bool right) {
     return front && left && right;
 }
 
-RVCController::RVCController(IObstacleSensor &obstacleSensor, IDustSensor &dustSensor,
-                             IMotor &motor, ICleaner &cleaner, MovementManager &movementManager,
-                             CleaningManager &cleaningManager,
-                             ObstacleSensorSubject &obstacleSubject, DustSensorSubject &dustSubject)
+RVCController::RVCController(IObstacleSensor& obstacleSensor, IDustSensor& dustSensor,
+                             IMotor& motor, ICleaner& cleaner, MovementManager& movementManager,
+                             CleaningManager& cleaningManager,
+                             ObstacleSensorSubject& obstacleSubject, DustSensorSubject& dustSubject)
     : obstacleSensor_{obstacleSensor}, dustSensor_{dustSensor}, motor_{motor}, cleaner_{cleaner},
       movementManager_{movementManager}, cleaningManager_{cleaningManager},
       obstacleSubject_{obstacleSubject}, dustSubject_{dustSubject}, frontAdapter_{obstacleSensor_},
@@ -86,13 +86,21 @@ void RVCController::onDustDetected(bool detected) {
     }
 }
 
-MovementState RVCController::movementState() const { return core_.movementState(); }
+MovementState RVCController::movementState() const {
+    return core_.movementState();
+}
 
-bool RVCController::isError() const { return error_; }
+bool RVCController::isError() const {
+    return error_;
+}
 
-RvcController &RVCController::coreController() { return core_; }
+RvcController& RVCController::coreController() {
+    return core_;
+}
 
-const RvcController &RVCController::coreController() const { return core_; }
+const RvcController& RVCController::coreController() const {
+    return core_;
+}
 
 bool RVCController::initializeDevices() {
     for (int attempt = 0; attempt < kMaxInitializeAttempts; ++attempt) {
@@ -107,20 +115,20 @@ bool RVCController::initializeDevices() {
     return false;
 }
 
-std::string current_state_name(RVCController &controller) {
+std::string current_state_name(const RVCController& controller) {
     if (controller.isError()) {
         return "Error";
     }
     switch (controller.movementState()) {
-    case MovementState::Off:
-        return "Off";
-    case MovementState::Forward:
-        return "Cleaning";
-    case MovementState::StoppedForObstacle:
-    case MovementState::TurningLeft:
-    case MovementState::TurningRight:
-    case MovementState::Backward:
-        return "Avoiding";
+        case MovementState::Off:
+            return "Off";
+        case MovementState::Forward:
+            return "Cleaning";
+        case MovementState::StoppedForObstacle:
+        case MovementState::TurningLeft:
+        case MovementState::TurningRight:
+        case MovementState::Backward:
+            return "Avoiding";
     }
     return "Unknown";
 }

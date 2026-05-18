@@ -10,10 +10,10 @@
 namespace rvc {
 
 class MovementManager {
-  public:
-    MovementManager(IMovementMotor &motor, ITimer &turnTimer,
+public:
+    MovementManager(IMovementMotor& motor, ITimer& turnTimer,
                     std::chrono::milliseconds turnDuration = kDefaultTurnDuration);
-    MovementManager(IMotor &motor, IAvoidStrategy &strategy);
+    MovementManager(IMotor& motor, IAvoidStrategy& strategy);
 
     void stop();
     void moveForward();
@@ -27,12 +27,12 @@ class MovementManager {
 
     [[nodiscard]] MovementCommand currentCommand() const;
 
-  private:
-    IMovementMotor *motor_{nullptr};
-    IMotor *simulatorMotor_{nullptr};
-    IAvoidStrategy *simulatorStrategy_{nullptr};
+private:
+    IMovementMotor* motor_{nullptr};
+    IMotor* simulatorMotor_{nullptr};
+    IAvoidStrategy* simulatorStrategy_{nullptr};
     std::unique_ptr<ITimer> ownedTurnTimer_;
-    ITimer *turnTimer_{nullptr};
+    ITimer* turnTimer_{nullptr};
     MovementCommand currentCommand_{MovementCommand::Stop};
     std::chrono::milliseconds turnDuration_;
 };

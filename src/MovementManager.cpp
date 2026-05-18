@@ -1,16 +1,19 @@
 #include "rvc/MovementManager.hpp"
+
 #include "rvc/AdapterTimer.hpp"
 
 namespace rvc {
 
-MovementManager::MovementManager(IMovementMotor &motor, ITimer &turnTimer,
+MovementManager::MovementManager(IMovementMotor& motor, ITimer& turnTimer,
                                  std::chrono::milliseconds turnDuration)
-    : motor_{&motor}, turnTimer_{&turnTimer}, turnDuration_{turnDuration} {}
+    : motor_{&motor}, turnTimer_{&turnTimer}, turnDuration_{turnDuration} {
+}
 
-MovementManager::MovementManager(IMotor &motor, IAvoidStrategy &strategy)
+MovementManager::MovementManager(IMotor& motor, IAvoidStrategy& strategy)
     : simulatorMotor_{&motor}, simulatorStrategy_{&strategy},
       ownedTurnTimer_{std::make_unique<Timer>()}, turnTimer_{ownedTurnTimer_.get()},
-      turnDuration_{kDefaultTurnDuration} {}
+      turnDuration_{kDefaultTurnDuration} {
+}
 
 void MovementManager::stop() {
     currentCommand_ = MovementCommand::Stop;
@@ -90,6 +93,8 @@ bool MovementManager::isTurnComplete() const {
     return turnTimer_->expired();
 }
 
-MovementCommand MovementManager::currentCommand() const { return currentCommand_; }
+MovementCommand MovementManager::currentCommand() const {
+    return currentCommand_;
+}
 
 } // namespace rvc

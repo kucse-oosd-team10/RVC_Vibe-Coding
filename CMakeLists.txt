@@ -1,13 +1,25 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.22)
 
 project(rvc_ai LANGUAGES CXX)
-
-option(BUILD_PYTHON_BINDINGS "Build pybind11 module for simulator integration" ON)
-option(BUILD_UNIT_TESTS "Build GoogleTest unit tests" ON)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+
+# compile_commands.json for clang-tidy
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# ---------- Options ----------
+option(ENABLE_TESTING "Build unit tests" ON)
+option(ENABLE_COVERAGE "Enable coverage flags" OFF)
+option(BUILD_UNIT_TESTS "Build GoogleTest unit tests" ${ENABLE_TESTING})
+option(BUILD_PYTHON_BINDINGS "Build pybind11 module for simulator integration" OFF)
+
+# ---------- Coverage flags ----------
+if(ENABLE_COVERAGE)
+    add_compile_options(-fprofile-instr-generate -fcoverage-mapping)
+    add_link_options(-fprofile-instr-generate -fcoverage-mapping)
+endif()
 
 add_library(rvc_controller
     src/AdapterTimer.cpp
@@ -33,15 +45,26 @@ target_compile_options(rvc_controller
         -Wpedantic
 )
 
-enable_testing()
+if(ENABLE_TESTING AND BUILD_UNIT_TESTS)
+    enable_testing()
 
-if(BUILD_UNIT_TESTS)
-    find_package(GTest REQUIRED)
+    include(FetchContent)
+
+    FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG        v1.15.2
+    )
+    FetchContent_MakeAvailable(googletest)
+
     include(GoogleTest)
 
-    add_executable(rvc_unit_tests tests/rvc_unit_tests.cpp)
-    target_link_libraries(rvc_unit_tests PRIVATE rvc_controller GTest::gtest_main)
-    gtest_discover_tests(rvc_unit_tests)
+    add_executable(rvc_tests tests/rvc_unit_tests.cpp)
+    target_link_libraries(rvc_tests PRIVATE rvc_controller GTest::gtest_main)
+    set_target_properties(rvc_tests PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/tests
+    )
+    gtest_discover_tests(rvc_tests)
 endif()
 
 if(BUILD_PYTHON_BINDINGS)

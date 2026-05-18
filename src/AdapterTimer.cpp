@@ -5,7 +5,8 @@
 
 namespace rvc {
 
-Timer::Timer(ClockFn clockFn) : clock_{std::move(clockFn)} {}
+Timer::Timer(ClockFn clockFn) : clock_{std::move(clockFn)} {
+}
 
 void Timer::start(std::chrono::milliseconds duration) {
     duration_ = duration;
@@ -18,14 +19,18 @@ void Timer::start() {
     fired_ = false;
 }
 
-void Timer::stop() { running_ = false; }
+void Timer::stop() {
+    running_ = false;
+}
 
 void Timer::reset() {
     running_ = false;
     fired_ = false;
 }
 
-bool Timer::expired() const { return isExpired(); }
+bool Timer::expired() const {
+    return isExpired();
+}
 
 bool Timer::isExpired() const {
     if (!running_) {
@@ -34,13 +39,17 @@ bool Timer::isExpired() const {
     return clock_() - startTime_ >= duration_.count();
 }
 
-bool Timer::isRunning() const { return running_; }
+bool Timer::isRunning() const {
+    return running_;
+}
 
 void Timer::setDuration(std::int64_t durationMs) {
     duration_ = std::chrono::milliseconds{durationMs};
 }
 
-void Timer::setCallback(Callback callback) { callback_ = std::move(callback); }
+void Timer::setCallback(Callback callback) {
+    callback_ = std::move(callback);
+}
 
 void Timer::update() {
     if (!isExpired() || fired_) {

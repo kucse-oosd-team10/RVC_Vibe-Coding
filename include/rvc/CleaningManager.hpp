@@ -10,10 +10,10 @@
 namespace rvc {
 
 class CleaningManager {
-  public:
-    CleaningManager(ICleaningMotor &cleaningMotor, IDustSensor &dustSensor, ITimer &powerUpTimer,
+public:
+    CleaningManager(ICleaningMotor& cleaningMotor, IDustSensor& dustSensor, ITimer& powerUpTimer,
                     std::chrono::milliseconds powerUpDuration = kDefaultPowerUpDuration);
-    CleaningManager(ICleaner &cleaner, Timer::ClockFn clockFn);
+    CleaningManager(ICleaner& cleaner, Timer::ClockFn clockFn);
 
     void start();
     void startCleaning();
@@ -31,15 +31,15 @@ class CleaningManager {
     [[nodiscard]] bool getLatestDustDetected() const;
     [[nodiscard]] bool pendingPowerUp() const;
 
-  private:
+private:
     void enterNormal();
     void enterPowerUp();
 
-    ICleaningMotor *cleaningMotor_{nullptr};
-    ICleaner *cleaner_{nullptr};
-    IDustSensor *dustSensor_{nullptr};
+    ICleaningMotor* cleaningMotor_{nullptr};
+    ICleaner* cleaner_{nullptr};
+    IDustSensor* dustSensor_{nullptr};
     std::unique_ptr<Timer> ownedPowerUpTimer_;
-    ITimer *powerUpTimer_{nullptr};
+    ITimer* powerUpTimer_{nullptr};
     CleaningState currentState_{CleaningState::Off};
     PowerLevel powerLevel_{PowerLevel::OFF};
     bool latestDustDetected_{false};

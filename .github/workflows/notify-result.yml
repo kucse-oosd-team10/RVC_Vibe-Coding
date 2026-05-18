@@ -1,0 +1,52 @@
+name: notify-result
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+        - completed
+
+env:
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+jobs:
+  notify-result:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Success
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: |
+          RUN_URL="${{ github.event.workflow_run.html_url }}"
+
+          JSON_PAYLOAD=$(cat <<EOF
+          {
+            "embeds": [
+              {
+                "description": "모든 검사가 성공적으로 완료되었습니다.\n\n[상세 결과 확인]($RUN_URL)",
+                "color": 65280
+              }
+            ]
+          }
+          EOF
+          )
+
+          curl -H "Content-Type: application/json" -X POST -d "$JSON_PAYLOAD" $DISCORD_WEBHOOK
+
+      - name: Failure
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        run: |
+          RUN_URL="${{ github.event.workflow_run.html_url }}"
+
+          JSON_PAYLOAD=$(cat <<EOF
+          {
+            "embeds": [
+              {
+                "description": "코드 검사 또는 빌드 중 오류가 발생했습니다.\n\n[상세 로그 확인]($RUN_URL)",
+                "color": 16711680
+              }
+            ]
+          }
+          EOF
+          )
+
+          curl -H "Content-Type: application/json" -X POST -d "$JSON_PAYLOAD" $DISCORD_WEBHOOK

@@ -1,0 +1,193 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  CC: clang
+  CXX: clang++
+
+jobs:
+  # ─────────────────────────────────────
+  #  Build + Test + Coverage
+  # ─────────────────────────────────────
+  build-and-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            clang \
+            llvm \
+            ninja-build \
+            cmake \
+            cppcheck
+
+      - name: Configure (dev)
+        run: cmake --preset dev
+
+      - name: Build (dev)
+        run: cmake --build --preset dev
+
+      - name: Run tests
+        run: ctest --preset dev
+
+      # ── Coverage ──
+      - name: Configure (coverage)
+        run: cmake --preset coverage
+
+      - name: Build (coverage)
+        run: cmake --build --preset coverage
+
+      - name: Run tests with profiling
+        run: |
+          LLVM_PROFILE_FILE="build/coverage/default_%p.profraw" \
+            ./build/coverage/tests/rvc_tests
+
+      - name: Generate coverage report
+        run: |
+          mkdir -p coverage-report
+          ls -la build/coverage/default_*.profraw
+          llvm-profdata merge -sparse build/coverage/default_*.profraw \
+            -o build/coverage/default.profdata
+          llvm-cov export \
+            build/coverage/tests/rvc_tests \
+            -instr-profile=build/coverage/default.profdata \
+            -format=lcov \
+            -ignore-filename-regex='build/|tests/' \
+            > coverage-report/lcov.info
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage-report/
+
+  # ─────────────────────────────────────
+  #  Formatting check
+  # ─────────────────────────────────────
+  format-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+
+      - name: Check formatting
+        run: ./scripts/format.sh check
+
+  # ─────────────────────────────────────
+  #  clang-tidy
+  # ─────────────────────────────────────
+  clang-tidy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang clang-tidy ninja-build cmake
+
+      - name: Configure
+        run: cmake --preset dev
+
+      - name: Build (needed for headers)
+        run: cmake --build --preset dev
+
+      - name: Run clang-tidy
+        run: ./scripts/lint.sh build/dev
+
+  # ─────────────────────────────────────
+  #  cppcheck
+  # ─────────────────────────────────────
+  cppcheck:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang ninja-build cmake cppcheck
+
+      - name: Configure
+        run: cmake --preset dev
+
+      - name: Run cppcheck
+        run: |
+          cppcheck \
+            --enable=all \
+            --std=c++20 \
+            --language=c++ \
+            --suppress=missingIncludeSystem \
+            --suppress=unmatchedSuppression \
+            --suppress=unusedFunction \
+            --error-exitcode=1 \
+            -I include \
+            src include tests
+
+  # ─────────────────────────────────────
+  #  SonarCloud
+  # ─────────────────────────────────────
+  sonarcloud:
+    needs: build-and-test
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history for blame
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang ninja-build cmake cppcheck llvm
+
+      - name: Build with compile-commands
+        run: |
+          cmake --preset dev
+          cmake --build --preset dev
+
+      - name: Generate coverage
+        run: |
+          cmake --preset coverage
+          cmake --build --preset coverage
+          mkdir -p coverage-report
+          LLVM_PROFILE_FILE="build/coverage/default_%p.profraw" \
+            ./build/coverage/tests/rvc_tests
+          llvm-profdata merge -sparse build/coverage/default_*.profraw \
+            -o build/coverage/default.profdata
+          llvm-cov export \
+            build/coverage/tests/rvc_tests \
+            -instr-profile=build/coverage/default.profdata \
+            -format=lcov \
+            -ignore-filename-regex='build/|tests/' \
+            > coverage-report/lcov.info
+          python3 scripts/lcov-to-sonar-generic.py \
+            coverage-report/lcov.info \
+            coverage-report/sonar-coverage.xml
+
+      - name: Generate cppcheck report
+        run: |
+          cppcheck \
+            --enable=all \
+            --std=c++20 \
+            --suppress=missingIncludeSystem \
+            --suppress=unmatchedSuppression \
+            -I include \
+            --xml \
+            src include tests \
+            2> cppcheck-report.xml || true
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io

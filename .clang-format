@@ -1,4 +1,69 @@
 BasedOnStyle: LLVM
+Language: Cpp
+
+# ── Indentation ──
 IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+NamespaceIndentation: None
+IndentCaseLabels: true
+IndentPPDirectives: BeforeHash
+AccessModifierOffset: -4
+
+# ── Line width ──
 ColumnLimit: 100
 
+# ── Braces ──
+BreakBeforeBraces: Attach
+
+# ── Pointer / Reference ──
+PointerAlignment: Left
+ReferenceAlignment: Left
+DerivePointerAlignment: false
+
+# ── Short statements: always multi-line ──
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+
+# ── Spaces ──
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpacesInParentheses: false
+SpacesInAngles: Never
+
+# ── Empty lines ──
+MaxEmptyLinesToKeep: 1
+KeepEmptyLinesAtTheStartOfBlocks: false
+SeparateDefinitionBlocks: Always
+
+# ── Include ordering ──
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^"rvc/.*\.hpp"'
+    Priority: 1
+  - Regex: "^<gtest/"
+    Priority: 3
+  - Regex: "^<"
+    Priority: 2
+  - Regex: ".*"
+    Priority: 4
+
+# ── Other ──
+AlignAfterOpenBracket: Align
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackArguments: true
+BinPackParameters: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+Cpp11BracedListStyle: true
+FixNamespaceComments: true
+ReflowComments: true
