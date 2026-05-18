@@ -15,19 +15,24 @@ using namespace rvc;
 using namespace rvc::test;
 
 class TestState final : public IRvcState {
-  public:
-    explicit TestState(MovementState movementState) : movementState_{movementState} {}
+public:
+    explicit TestState(MovementState movementState) : movementState_{movementState} {
+    }
 
-    [[nodiscard]] MovementState movementState() const override { return movementState_; }
+    [[nodiscard]] MovementState movementState() const override {
+        return movementState_;
+    }
 
-  private:
+private:
     MovementState movementState_;
 };
 
 TEST(TimerTest, CoversLifecycleExpirationCallbackAndDefaultClock) {
     std::int64_t now = 100;
     int callbackCount = 0;
-    Timer timer{[&now] { return now; }};
+    Timer timer{[&now] {
+        return now;
+    }};
 
     EXPECT_FALSE(timer.isRunning());
     EXPECT_FALSE(timer.expired());
@@ -37,11 +42,15 @@ TEST(TimerTest, CoversLifecycleExpirationCallbackAndDefaultClock) {
     EXPECT_FALSE(timer.expired());
 
     now = 149;
+    EXPECT_EQ(now, 149);
     timer.update();
     EXPECT_EQ(callbackCount, 0);
 
-    timer.setCallback([&callbackCount] { callbackCount += 1; });
+    timer.setCallback([&callbackCount] {
+        callbackCount += 1;
+    });
     now = 150;
+    EXPECT_EQ(now, 150);
     EXPECT_TRUE(timer.isExpired());
     timer.update();
     EXPECT_EQ(callbackCount, 1);
@@ -53,6 +62,7 @@ TEST(TimerTest, CoversLifecycleExpirationCallbackAndDefaultClock) {
     timer.setDuration(10);
     timer.start();
     now = 159;
+    EXPECT_EQ(now, 159);
     EXPECT_FALSE(timer.expired());
     timer.stop();
     EXPECT_FALSE(timer.expired());
@@ -70,7 +80,9 @@ TEST(TimerTest, CoversLifecycleExpirationCallbackAndDefaultClock) {
 
 TEST(TimerTest, UpdateWithoutCallbackStillStopsExpiredTimer) {
     std::int64_t now = 0;
-    Timer timer{[&now] { return now; }};
+    Timer timer{[&now] {
+        return now;
+    }};
 
     timer.start(std::chrono::milliseconds{5});
     now = 5;
@@ -83,17 +95,23 @@ TEST(TimerTest, UpdateWithoutCallbackStillStopsExpiredTimer) {
 TEST(TimerTest, RestartAllowsCallbackToFireAgain) {
     std::int64_t now = 10;
     int callbackCount = 0;
-    Timer timer{[&now] { return now; }};
+    Timer timer{[&now] {
+        return now;
+    }};
     timer.setDuration(3);
-    timer.setCallback([&callbackCount] { callbackCount += 1; });
+    timer.setCallback([&callbackCount] {
+        callbackCount += 1;
+    });
 
     timer.start();
     now = 13;
+    EXPECT_EQ(now, 13);
     timer.update();
     EXPECT_EQ(callbackCount, 1);
 
     timer.start();
     now = 16;
+    EXPECT_EQ(now, 16);
     timer.update();
     EXPECT_EQ(callbackCount, 2);
 }
@@ -101,8 +119,12 @@ TEST(TimerTest, RestartAllowsCallbackToFireAgain) {
 TEST(TimerTest, ResetBeforeExpirationPreventsCallback) {
     std::int64_t now = 0;
     int callbackCount = 0;
-    Timer timer{[&now] { return now; }};
-    timer.setCallback([&callbackCount] { callbackCount += 1; });
+    Timer timer{[&now] {
+        return now;
+    }};
+    timer.setCallback([&callbackCount] {
+        callbackCount += 1;
+    });
 
     timer.start(std::chrono::milliseconds{10});
     timer.reset();
@@ -221,7 +243,9 @@ TEST(CleaningManagerTest, DefersPowerUpWhenDustIsDetectedDuringAvoidance) {
 TEST(CleaningManagerTest, LegacyCleanerPathTracksDustAndPowerTransitions) {
     FakeCleaner cleaner;
     std::int64_t now = 0;
-    CleaningManager manager{cleaner, [&now] { return now; }};
+    CleaningManager manager{cleaner, [&now] {
+                                return now;
+                            }};
 
     manager.startCleaning();
     EXPECT_EQ(manager.currentState(), CleaningState::Normal);
@@ -238,11 +262,13 @@ TEST(CleaningManagerTest, LegacyCleanerPathTracksDustAndPowerTransitions) {
     EXPECT_EQ(manager.getPowerLevel(), PowerLevel::POWER_UP);
 
     now = 3000;
+    EXPECT_EQ(now, 3000);
     manager.update();
     EXPECT_EQ(manager.currentState(), CleaningState::PowerUp);
 
     manager.handleDustDetected(false);
     now = 6000;
+    EXPECT_EQ(now, 6000);
     manager.update();
     EXPECT_EQ(manager.currentState(), CleaningState::Normal);
 
@@ -599,13 +625,13 @@ TEST(SensorSubjectsTest, HandlesInterruptDetachNullObserverAndDustState) {
     dustSubject.attach(&observer);
     EXPECT_FALSE(dustSubject.isDustDetected());
 
-    dustSensor.dustDetected = true;
+    dustSensor.setDustDetected(true);
     dustSubject.poll();
     EXPECT_TRUE(dustSubject.isDustDetected());
     EXPECT_EQ(observer.dustEvents, 1);
 
     dustSubject.detach(&observer);
-    dustSensor.dustDetected = false;
+    dustSensor.setDustDetected(false);
     dustSubject.poll();
     EXPECT_FALSE(dustSubject.isDustDetected());
     EXPECT_EQ(observer.dustEvents, 1);
@@ -634,7 +660,7 @@ TEST(SensorSubjectsTest, DirectDustNotifyUsesLatestPolledValue) {
     RecordingObserver observer;
     dustSubject.attach(&observer);
 
-    dustSensor.dustDetected = true;
+    dustSensor.setDustDetected(true);
     dustSubject.poll();
     dustSubject.notify();
 
@@ -796,7 +822,7 @@ TEST(RvcControllerTest, FrontAndLeftObstacleTurnsRightThenMovesForward) {
     RvcController controller{frontSensor, sideSensor, dustSensor, movement, cleaning, strategy};
 
     controller.startCleaning();
-    sideSensor.currentSnapshot = {true, false};
+    sideSensor.setCurrentSnapshot({true, false});
     frontSensor.triggerInterrupt();
     EXPECT_EQ(controller.movementState(), MovementState::TurningRight);
     EXPECT_EQ(movement.currentCommand(), MovementCommand::TurnRight);
@@ -825,16 +851,15 @@ TEST(RvcControllerTest, BackwardKeepsMovingThenTurnsRightWhenRightSideClears) {
     RvcController controller{frontSensor, sideSensor, dustSensor, movement, cleaning, strategy};
 
     controller.startCleaning();
-    sideSensor.currentSnapshot = {true, true};
+    sideSensor.setCurrentSnapshot({true, true});
     frontSensor.triggerInterrupt();
     EXPECT_EQ(controller.movementState(), MovementState::Backward);
 
-    sideSensor.currentSnapshot = {true, true};
     controller.tick();
     EXPECT_EQ(controller.movementState(), MovementState::Backward);
     EXPECT_EQ(movement.currentCommand(), MovementCommand::Backward);
 
-    sideSensor.currentSnapshot = {true, false};
+    sideSensor.setCurrentSnapshot({true, false});
     controller.tick();
     EXPECT_EQ(controller.movementState(), MovementState::TurningRight);
     EXPECT_EQ(movement.currentCommand(), MovementCommand::TurnRight);
@@ -956,7 +981,9 @@ TEST(SimulatorRVCControllerAdapterTest, TickPowerOffAndNonDetectedEventsRemainSa
     FakeCleaner cleaner;
     DefaultAvoidStrategy simulatorStrategy;
     MovementManager movementManager{motor, simulatorStrategy};
-    CleaningManager cleaningManager{cleaner, [] { return 0; }};
+    CleaningManager cleaningManager{cleaner, [] {
+                                        return 0;
+                                    }};
     ObstacleSensorSubject obstacleSubject{obstacleSensor};
     DustSensorSubject dustSubject{dustSensor};
     RVCController controller{obstacleSensor,  dustSensor,      motor,           cleaner,
@@ -977,7 +1004,7 @@ TEST(SimulatorRVCControllerAdapterTest, TickPowerOffAndNonDetectedEventsRemainSa
     controller.onDustDetected(true);
     EXPECT_EQ(cleaner.lastPower(), PowerLevel::POWER_UP);
     EXPECT_EQ(controller.coreController().movementState(), MovementState::Forward);
-    const RVCController &constController = controller;
+    const RVCController& constController = controller;
     EXPECT_EQ(constController.coreController().movementState(), MovementState::Forward);
 
     obstacleSensor.frontDetected = true;
@@ -1005,7 +1032,9 @@ TEST(SimulatorRVCControllerAdapterTest, TickAndSensorEventsAreIgnoredWhileInErro
     cleaner.initializeFailuresRemaining = 3;
     DefaultAvoidStrategy simulatorStrategy;
     MovementManager movementManager{motor, simulatorStrategy};
-    CleaningManager cleaningManager{cleaner, [] { return 0; }};
+    CleaningManager cleaningManager{cleaner, [] {
+                                        return 0;
+                                    }};
     ObstacleSensorSubject obstacleSubject{obstacleSensor};
     DustSensorSubject dustSubject{dustSensor};
     RVCController controller{obstacleSensor,  dustSensor,      motor,           cleaner,
@@ -1037,7 +1066,9 @@ TEST(SimulatorRVCControllerAdapterTest, PowerOnRetriesTransientInitializationFai
     obstacleSensor.initializeFailuresRemaining = 1;
     DefaultAvoidStrategy simulatorStrategy;
     MovementManager movementManager{motor, simulatorStrategy};
-    CleaningManager cleaningManager{cleaner, [] { return 0; }};
+    CleaningManager cleaningManager{cleaner, [] {
+                                        return 0;
+                                    }};
     ObstacleSensorSubject obstacleSubject{obstacleSensor};
     DustSensorSubject dustSubject{dustSensor};
     RVCController controller{obstacleSensor,  dustSensor,      motor,           cleaner,
@@ -1060,7 +1091,9 @@ TEST(SimulatorRVCControllerAdapterTest, TickPropagatesDustDetectionToCoreControl
     FakeCleaner cleaner;
     DefaultAvoidStrategy simulatorStrategy;
     MovementManager movementManager{motor, simulatorStrategy};
-    CleaningManager cleaningManager{cleaner, [] { return 0; }};
+    CleaningManager cleaningManager{cleaner, [] {
+                                        return 0;
+                                    }};
     ObstacleSensorSubject obstacleSubject{obstacleSensor};
     DustSensorSubject dustSubject{dustSensor};
     RVCController controller{obstacleSensor,  dustSensor,      motor,           cleaner,
