@@ -1,5 +1,0 @@
-if(EXISTS "/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/rvc_unit_tests[1]_tests.cmake")
-  include("/Users/whdydrnr/Documents/GitHub/rvc-ai/build/coverage/rvc_unit_tests[1]_tests.cmake")
-else()
-  add_test(rvc_unit_tests_NOT_BUILT rvc_unit_tests_NOT_BUILT)
-endif()
