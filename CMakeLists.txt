@@ -47,19 +47,11 @@ target_compile_options(rvc_controller
         -Wpedantic
 )
 
-if(ENABLE_TESTING AND BUILD_UNIT_TESTS)
+if(ENABLE_TESTING)
     enable_testing()
+endif()
 
-    include(FetchContent)
-
-    FetchContent_Declare(
-        googletest
-        GIT_REPOSITORY https://github.com/google/googletest.git
-        GIT_TAG        v1.15.2
-    )
-    FetchContent_MakeAvailable(googletest)
-
-if(BUILD_UNIT_TESTS)
+if(ENABLE_TESTING AND BUILD_UNIT_TESTS)
     find_package(GTest QUIET)
     if(NOT GTest_FOUND)
         include(FetchContent)
