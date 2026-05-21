@@ -21,6 +21,8 @@ add_library(rvc_controller
     src/SimulatorApi.cpp
 )
 
+set_target_properties(rvc_controller PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 target_include_directories(rvc_controller
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -36,7 +38,17 @@ target_compile_options(rvc_controller
 enable_testing()
 
 if(BUILD_UNIT_TESTS)
-    find_package(GTest REQUIRED)
+    find_package(GTest QUIET)
+    if(NOT GTest_FOUND)
+        include(FetchContent)
+        FetchContent_Declare(
+            googletest
+            GIT_REPOSITORY https://github.com/google/googletest.git
+            GIT_TAG        v1.15.2
+        )
+        FetchContent_MakeAvailable(googletest)
+    endif()
+
     include(GoogleTest)
 
     add_executable(rvc_unit_tests tests/rvc_unit_tests.cpp)

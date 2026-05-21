@@ -1,0 +1,52 @@
+name: obstacle_front
+description: |
+  Robot drives east along a corridor and encounters an obstacle directly
+  ahead. The DefaultAvoidStrategy truth table says (front=T, left=F, *) →
+  turn LEFT. Verifies that the controller transitions into Avoiding,
+  successfully steers around the obstacle, and resumes Cleaning.
+
+tick_duration_ms: 100
+max_ticks: 30
+power_off_at_tick: 10
+
+world:
+  size: [10, 5]
+  obstacles:
+    - [5, 2]
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 2], amount: 1.0}
+    - {pos: [3, 2], amount: 1.0}
+    - {pos: [6, 1], amount: 1.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates:
+  off: 0.0
+  normal: 0.5
+  power_up: 2.0
+
+init_failures:
+  motor: 0
+  cleaner: 0
+  obstacle_sensor: 0
+  dust_sensor: 0
+
+assertions:
+  - kind: motor_history_contains
+    direction: LEFT
+    description: avoidance turned left as required by truth table (F=T, L=F)
+  - kind: motor_history_contains
+    direction: FORWARD
+    description: forward motion resumed after avoidance
+  - kind: collision_count_eq
+    value: 0
+    description: avoidance must not collide with obstacle
+  - kind: robot_in_region
+    region: [[0, 0], [9, 4]]
+    description: robot stays inside the world bounds
+  - kind: dust_collected_at_least
+    value: 0.5
+    description: at least one cell of dust cleaned before/during avoidance

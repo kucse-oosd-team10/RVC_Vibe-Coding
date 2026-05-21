@@ -10,7 +10,7 @@ MovementManager::MovementManager(IMovementMotor &motor, ITimer &turnTimer,
 MovementManager::MovementManager(IMotor &motor, IAvoidStrategy &strategy)
     : simulatorMotor_{&motor}, simulatorStrategy_{&strategy},
       ownedTurnTimer_{std::make_unique<Timer>()}, turnTimer_{ownedTurnTimer_.get()},
-      turnDuration_{kDefaultTurnDuration} {}
+      turnDuration_{std::chrono::milliseconds{0}} {}
 
 void MovementManager::stop() {
     currentCommand_ = MovementCommand::Stop;

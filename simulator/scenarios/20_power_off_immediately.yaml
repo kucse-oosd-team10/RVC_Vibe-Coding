@@ -1,0 +1,33 @@
+name: power_off_immediately
+description: |
+  powerOff issued on the very first tick after powerOn completes. Verifies
+  that the controller can reach Off cleanly without ever doing real work.
+  Cleaner stays OFF throughout and no collision occurs.
+
+tick_duration_ms: 100
+max_ticks: 5
+power_off_at_tick: 0
+
+world:
+  size: [6, 5]
+  obstacles: []
+  dust: []
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: final_state
+    expected: "Off"
+  - kind: cleaner_history_contains
+    power: "OFF"
+  - kind: cleaner_power_count_eq
+    power: POWER_UP
+    value: 0
+    description: never escalated to POWER_UP
+  - kind: collision_count_eq
+    value: 0

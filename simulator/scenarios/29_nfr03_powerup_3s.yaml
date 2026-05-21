@@ -1,0 +1,42 @@
+name: nfr03_powerup_3s
+description: |
+  NFR-03 derived. POWER_UP duration is 3000ms (powerUpDuration). We drive
+  exactly one dust event at tick 1 via the override sequence and verify:
+    - cleaner=POWER_UP at clock 100ms (entry)
+    - cleaner=POWER_UP at clock 2900ms (just before timer expiry)
+    - cleaner=NORMAL at clock 3100ms (after timer expiry, no fresh dust)
+
+tick_duration_ms: 100
+max_ticks: 35
+power_off_at_tick: 33
+
+world:
+  size: [40, 5]
+  obstacles: []
+  dust: []
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+dust_sensor_override:
+  - {tick: 0, value: true}
+
+assertions:
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 100
+    expected: POWER_UP
+    description: POWER_UP engages on first dust event
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 2900
+    expected: POWER_UP
+    description: still POWER_UP just before 3s expiry
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 3100
+    expected: NORMAL
+    description: NORMAL once 3s elapsed and no dust
+  - kind: collision_count_eq
+    value: 0

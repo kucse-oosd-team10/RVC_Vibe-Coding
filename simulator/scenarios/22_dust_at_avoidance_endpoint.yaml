@@ -1,0 +1,39 @@
+name: dust_at_avoidance_endpoint
+description: |
+  No dust on the original heading. Front+left blocked while right is clear,
+  so the avoidance turn redirects the robot RIGHT (south) onto a column
+  populated with dust, and POWER_UP must engage on the new path. Validates
+  that cleaner subscriptions stay active across an avoidance → cleaning
+  transition.
+
+tick_duration_ms: 100
+max_ticks: 9
+power_off_at_tick: 8
+
+world:
+  size: [10, 8]
+  obstacles:
+    - [3, 3]
+    - [2, 2]
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 4], amount: 5.0}
+    - {pos: [2, 5], amount: 5.0}
+    - {pos: [2, 6], amount: 5.0}
+
+robot:
+  start: [1, 3]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: motor_history_contains
+    direction: RIGHT
+    description: front+left blocked, right clear → strategy turns RIGHT
+  - kind: cleaner_history_contains
+    power: POWER_UP
+    description: dust on the redirected path engages POWER_UP after avoid
+  - kind: collision_count_eq
+    value: 0

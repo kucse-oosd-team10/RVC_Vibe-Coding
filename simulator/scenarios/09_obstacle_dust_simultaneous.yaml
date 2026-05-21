@@ -1,0 +1,37 @@
+name: obstacle_dust_simultaneous
+description: |
+  Both obstacle and dust events are present in the same tick.
+  Obstacle handling has priority; AvoidingState transitions are taken first,
+  cleaner stays OFF/NORMAL during avoidance and POWER_UP only after the path
+  resumes over a dusty cell.
+
+tick_duration_ms: 100
+max_ticks: 12
+power_off_at_tick: 8
+
+world:
+  size: [12, 5]
+  obstacles:
+    - [5, 2]
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 2], amount: 1.0}
+    - {pos: [3, 2], amount: 1.0}
+    - {pos: [4, 2], amount: 1.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: motor_history_contains
+    direction: LEFT
+    description: avoidance executes (front blocked, left free)
+  - kind: cleaner_history_contains
+    power: POWER_UP
+    description: cleaner powers up over dusty cells once Cleaning resumes
+  - kind: collision_count_eq
+    value: 0

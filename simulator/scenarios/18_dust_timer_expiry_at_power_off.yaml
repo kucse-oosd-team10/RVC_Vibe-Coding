@@ -1,0 +1,42 @@
+name: dust_timer_expiry_at_power_off
+description: |
+  POWER_UP is engaged at clock 100ms by a dust override at tick 0. With no
+  further dust, the 3000ms POWER_UP timer expires at clock 3100ms. powerOff
+  is scheduled at the same tick (31) that the timer rolls back to NORMAL.
+  Final state must be Off with no exception or collision.
+
+tick_duration_ms: 100
+max_ticks: 35
+power_off_at_tick: 31
+
+world:
+  size: [40, 5]
+  obstacles: []
+  dust: []
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+dust_sensor_override:
+  - {tick: 0, value: true}
+
+assertions:
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 100
+    expected: POWER_UP
+    description: dust event engages POWER_UP
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 3000
+    expected: POWER_UP
+    description: still POWER_UP just before expiry
+  - kind: final_state
+    expected: "Off"
+  - kind: cleaner_history_contains
+    power: "OFF"
+    description: powerOff forces cleaner OFF
+  - kind: collision_count_eq
+    value: 0

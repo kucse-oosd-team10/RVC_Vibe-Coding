@@ -352,7 +352,7 @@ TEST(MovementManagerTest, SimulatorMotorPathExecutesAllCommandsAndAvoidanceBranc
     manager.moveBackward();
     manager.turnLeft();
     EXPECT_EQ(manager.currentCommand(), MovementCommand::TurnLeft);
-    EXPECT_FALSE(manager.isTurnComplete());
+    EXPECT_TRUE(manager.isTurnComplete());
 
     manager.turnRight();
     EXPECT_EQ(manager.currentCommand(), MovementCommand::TurnRight);

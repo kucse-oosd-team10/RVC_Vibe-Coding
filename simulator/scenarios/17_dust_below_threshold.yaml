@@ -1,0 +1,37 @@
+name: dust_below_threshold
+description: |
+  Dust amount sits below the threshold (0.3 < 0.5). isDustDetected returns
+  False every tick, so CleaningManager never escalates and the cleaner stays
+  at NORMAL. POWER_UP must never appear in cleaner history.
+
+tick_duration_ms: 100
+max_ticks: 12
+power_off_at_tick: 10
+
+world:
+  size: [12, 5]
+  obstacles: []
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 2], amount: 0.3}
+    - {pos: [3, 2], amount: 0.3}
+    - {pos: [4, 2], amount: 0.3}
+    - {pos: [5, 2], amount: 0.3}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: cleaner_history_contains
+    power: NORMAL
+    description: NORMAL engaged during cleaning
+  - kind: cleaner_power_count_eq
+    power: POWER_UP
+    value: 0
+    description: sub-threshold dust must NOT trigger POWER_UP
+  - kind: collision_count_eq
+    value: 0

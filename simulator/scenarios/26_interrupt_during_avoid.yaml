@@ -1,0 +1,33 @@
+name: interrupt_during_avoid
+description: |
+  A front-obstacle interrupt fires before tick polling. A second interrupt
+  fires after polling within the same tick. Both should produce avoidance
+  commands without crashing the state machine and without leaving the robot
+  collided.
+
+tick_duration_ms: 100
+max_ticks: 6
+power_off_at_tick: 5
+
+world:
+  size: [12, 5]
+  obstacles: []
+  dust: []
+
+robot:
+  start: [3, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+interrupts:
+  - {tick: 1, sub_phase: before_poll}
+  - {tick: 1, sub_phase: after_poll}
+
+assertions:
+  - kind: motor_avoidance_count_eq
+    value: 2
+    description: both interrupts in tick 1 produce one avoidance each
+  - kind: collision_count_eq
+    value: 0
