@@ -4,43 +4,48 @@ namespace rvc {
 namespace {
 
 class OffState final : public IRvcState {
-  public:
-    void startCleaning(RvcController &context) override {
+public:
+    void startCleaning(RvcController& context) override {
         context.frontSensor().initialize();
         context.sideSensor().initialize();
         context.dustSensor().initialize();
-        context.frontSensor().registerInterruptHandler(
-            [&context]() { context.onFrontObstacleDetected(); });
+        context.frontSensor().registerInterruptHandler([&context]() {
+            context.onFrontObstacleDetected();
+        });
         context.cleaningManager().start();
         context.movementManager().moveForward();
         context.changeState(makeForwardState());
     }
 
-    [[nodiscard]] MovementState movementState() const override { return MovementState::Off; }
+    [[nodiscard]] MovementState movementState() const override {
+        return MovementState::Off;
+    }
 };
 
 class ForwardState final : public IRvcState {
-  public:
-    void onEnter(RvcController &context) override {
+public:
+    void onEnter(RvcController& context) override {
         context.cleaningManager().onMovementStateChanged(MovementState::Forward);
     }
 
-    void onFrontObstacleDetected(RvcController &context) override {
+    void onFrontObstacleDetected(RvcController& context) override {
         context.movementManager().stop();
         context.cleaningManager().onMovementStateChanged(MovementState::StoppedForObstacle);
         context.changeState(makeStoppedForObstacleState());
     }
 
-    void onDustDetected(RvcController &context) override {
+    void onDustDetected(RvcController& context) override {
         context.cleaningManager().onDustDetected(MovementState::Forward);
     }
 
-    [[nodiscard]] MovementState movementState() const override { return MovementState::Forward; }
+    [[nodiscard]] MovementState movementState() const override {
+        return MovementState::Forward;
+    }
 };
 
 class StoppedForObstacleState final : public IRvcState {
-  public:
-    void onEnter(RvcController &context) override {
+public:
+    void onEnter(RvcController& context) override {
         sideSnapshot_ = context.sideSensor().read();
         const AvoidanceAction action =
             context.avoidanceStrategy().decideOnFrontObstacle(sideSnapshot_);
@@ -68,15 +73,16 @@ class StoppedForObstacleState final : public IRvcState {
         return MovementState::StoppedForObstacle;
     }
 
-  private:
+private:
     SideObstacleSnapshot sideSnapshot_{};
 };
 
 class TurningState final : public IRvcState {
-  public:
-    explicit TurningState(AvoidanceAction turnAction) : turnAction_{turnAction} {}
+public:
+    explicit TurningState(AvoidanceAction turnAction) : turnAction_{turnAction} {
+    }
 
-    void tick(RvcController &context) override {
+    void tick(RvcController& context) override {
         if (!context.movementManager().isTurnComplete()) {
             return;
         }
@@ -90,16 +96,17 @@ class TurningState final : public IRvcState {
                                                          : MovementState::TurningLeft;
     }
 
-  private:
+private:
     AvoidanceAction turnAction_;
 };
 
 class BackwardState final : public IRvcState {
-  public:
+public:
     explicit BackwardState(SideObstacleSnapshot initialSnapshot)
-        : previousSideSnapshot_{initialSnapshot} {}
+        : previousSideSnapshot_{initialSnapshot} {
+    }
 
-    void tick(RvcController &context) override {
+    void tick(RvcController& context) override {
         const SideObstacleSnapshot currentSideSnapshot = context.sideSensor().read();
         const AvoidanceAction action = context.avoidanceStrategy().decideWhileBackward(
             previousSideSnapshot_, currentSideSnapshot);
@@ -121,17 +128,23 @@ class BackwardState final : public IRvcState {
         context.changeState(makeTurningState(AvoidanceAction::TurnLeft));
     }
 
-    [[nodiscard]] MovementState movementState() const override { return MovementState::Backward; }
+    [[nodiscard]] MovementState movementState() const override {
+        return MovementState::Backward;
+    }
 
-  private:
+private:
     SideObstacleSnapshot previousSideSnapshot_;
 };
 
 } // namespace
 
-std::unique_ptr<IRvcState> makeOffState() { return std::make_unique<OffState>(); }
+std::unique_ptr<IRvcState> makeOffState() {
+    return std::make_unique<OffState>();
+}
 
-std::unique_ptr<IRvcState> makeForwardState() { return std::make_unique<ForwardState>(); }
+std::unique_ptr<IRvcState> makeForwardState() {
+    return std::make_unique<ForwardState>();
+}
 
 std::unique_ptr<IRvcState> makeStoppedForObstacleState() {
     return std::make_unique<StoppedForObstacleState>();

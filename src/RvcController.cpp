@@ -2,27 +2,34 @@
 
 namespace rvc {
 
-void IRvcState::onEnter(RvcController &) {}
+void IRvcState::onEnter(RvcController&) {
+}
 
-void IRvcState::startCleaning(RvcController &) {}
+void IRvcState::startCleaning(RvcController&) {
+}
 
-void IRvcState::stopCleaning(RvcController &context) { context.performStop(); }
+void IRvcState::stopCleaning(RvcController& context) {
+    context.performStop();
+}
 
-void IRvcState::onFrontObstacleDetected(RvcController &) {}
+void IRvcState::onFrontObstacleDetected(RvcController&) {
+}
 
-void IRvcState::onDustDetected(RvcController &context) {
+void IRvcState::onDustDetected(RvcController& context) {
     context.cleaningManager().onDustDetected(movementState());
 }
 
-void IRvcState::tick(RvcController &) {}
+void IRvcState::tick(RvcController&) {
+}
 
-RvcController::RvcController(IFrontObstacleSensor &frontSensor, ISideObstacleSensor &sideSensor,
-                             IDustSensor &dustSensor, MovementManager &movementManager,
-                             CleaningManager &cleaningManager,
-                             IObstacleAvoidanceStrategy &avoidanceStrategy)
+RvcController::RvcController(IFrontObstacleSensor& frontSensor, ISideObstacleSensor& sideSensor,
+                             IDustSensor& dustSensor, MovementManager& movementManager,
+                             CleaningManager& cleaningManager,
+                             IObstacleAvoidanceStrategy& avoidanceStrategy)
     : frontSensor_{frontSensor}, sideSensor_{sideSensor}, dustSensor_{dustSensor},
       movementManager_{movementManager}, cleaningManager_{cleaningManager},
-      avoidanceStrategy_{avoidanceStrategy}, currentState_{makeOffState()} {}
+      avoidanceStrategy_{avoidanceStrategy}, currentState_{makeOffState()} {
+}
 
 void RvcController::startCleaning() {
     enteringState_ = true;
@@ -31,7 +38,9 @@ void RvcController::startCleaning() {
     enterPendingStateIfNeeded();
 }
 
-void RvcController::stopCleaning() { performStop(); }
+void RvcController::stopCleaning() {
+    performStop();
+}
 
 void RvcController::onFrontObstacleDetected() {
     enteringState_ = true;
@@ -94,18 +103,32 @@ void RvcController::performStop() {
     currentState_ = makeOffState();
 }
 
-MovementState RvcController::movementState() const { return currentState_->movementState(); }
+MovementState RvcController::movementState() const {
+    return currentState_->movementState();
+}
 
-IFrontObstacleSensor &RvcController::frontSensor() { return frontSensor_; }
+IFrontObstacleSensor& RvcController::frontSensor() {
+    return frontSensor_;
+}
 
-ISideObstacleSensor &RvcController::sideSensor() { return sideSensor_; }
+ISideObstacleSensor& RvcController::sideSensor() {
+    return sideSensor_;
+}
 
-IDustSensor &RvcController::dustSensor() { return dustSensor_; }
+IDustSensor& RvcController::dustSensor() {
+    return dustSensor_;
+}
 
-MovementManager &RvcController::movementManager() { return movementManager_; }
+MovementManager& RvcController::movementManager() {
+    return movementManager_;
+}
 
-CleaningManager &RvcController::cleaningManager() { return cleaningManager_; }
+CleaningManager& RvcController::cleaningManager() {
+    return cleaningManager_;
+}
 
-IObstacleAvoidanceStrategy &RvcController::avoidanceStrategy() { return avoidanceStrategy_; }
+IObstacleAvoidanceStrategy& RvcController::avoidanceStrategy() {
+    return avoidanceStrategy_;
+}
 
 } // namespace rvc

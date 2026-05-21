@@ -5,7 +5,7 @@
 namespace rvc {
 
 class IAvoidStrategy {
-  public:
+public:
     virtual ~IAvoidStrategy() = default;
 
     virtual Direction decideDirection(bool front, bool left, bool right) = 0;
@@ -13,7 +13,7 @@ class IAvoidStrategy {
 };
 
 class DefaultAvoidStrategy final : public IAvoidStrategy {
-  public:
+public:
     Direction decideDirection(bool front, bool left, bool right) override;
     bool needsReverse(bool front, bool left, bool right) override;
 };

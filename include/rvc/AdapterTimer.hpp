@@ -9,7 +9,7 @@
 namespace rvc {
 
 class Timer final : public ITimer {
-  public:
+public:
     using ClockFn = std::function<std::int64_t()>;
     using Callback = std::function<void()>;
 
@@ -26,7 +26,7 @@ class Timer final : public ITimer {
     void setCallback(Callback callback);
     void update();
 
-  private:
+private:
     static std::int64_t defaultClock();
 
     ClockFn clock_;

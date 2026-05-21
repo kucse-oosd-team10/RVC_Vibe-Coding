@@ -8,7 +8,7 @@
 namespace rvc {
 
 class IFrontObstacleSensor {
-  public:
+public:
     using InterruptHandler = std::function<void()>;
 
     virtual ~IFrontObstacleSensor() = default;
@@ -19,7 +19,7 @@ class IFrontObstacleSensor {
 };
 
 class ISideObstacleSensor {
-  public:
+public:
     virtual ~ISideObstacleSensor() = default;
 
     virtual bool initialize() = 0;
@@ -28,7 +28,7 @@ class ISideObstacleSensor {
 };
 
 class IDustSensor {
-  public:
+public:
     virtual ~IDustSensor() = default;
 
     virtual bool initialize() = 0;
@@ -37,7 +37,7 @@ class IDustSensor {
 };
 
 class IObstacleSensor {
-  public:
+public:
     virtual ~IObstacleSensor() = default;
 
     virtual bool initialize() = 0;
@@ -47,7 +47,7 @@ class IObstacleSensor {
 };
 
 class IMotor {
-  public:
+public:
     virtual ~IMotor() = default;
 
     virtual bool initialize() = 0;
@@ -55,7 +55,7 @@ class IMotor {
 };
 
 class ICleaner {
-  public:
+public:
     virtual ~ICleaner() = default;
 
     virtual bool initialize() = 0;
@@ -63,7 +63,7 @@ class ICleaner {
 };
 
 class IMovementMotor {
-  public:
+public:
     virtual ~IMovementMotor() = default;
 
     virtual void stop() = 0;
@@ -74,7 +74,7 @@ class IMovementMotor {
 };
 
 class ICleaningMotor {
-  public:
+public:
     virtual ~ICleaningMotor() = default;
 
     virtual void off() = 0;
@@ -83,7 +83,7 @@ class ICleaningMotor {
 };
 
 class ITimer {
-  public:
+public:
     virtual ~ITimer() = default;
 
     virtual void start(std::chrono::milliseconds duration) = 0;

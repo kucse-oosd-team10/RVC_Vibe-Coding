@@ -1,0 +1,81 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "dev",
+      "displayName": "Dev (Debug)",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_TESTING": "ON",
+        "ENABLE_COVERAGE": "OFF"
+      }
+    },
+    {
+      "name": "coverage",
+      "displayName": "Coverage",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_TESTING": "ON",
+        "ENABLE_COVERAGE": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "ENABLE_TESTING": "OFF",
+        "ENABLE_COVERAGE": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev"
+    },
+    {
+      "name": "coverage",
+      "configurePreset": "coverage"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "dev",
+      "configurePreset": "dev",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "coverage",
+      "configurePreset": "coverage",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}
