@@ -1,0 +1,43 @@
+name: multi_dust_zone
+description: |
+  Two dust patches separated by a long clean gap. Cleaner escalates to
+  POWER_UP in zone A, the 3s timer expires during the gap and drops back
+  to NORMAL, and zone B re-engages POWER_UP. Validates the full
+  POWER_UP↔NORMAL cycle across multiple dust events.
+
+tick_duration_ms: 100
+max_ticks: 80
+power_off_at_tick: 75
+
+world:
+  size: [80, 5]
+  obstacles: []
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 2], amount: 5.0}
+    - {pos: [3, 2], amount: 5.0}
+    - {pos: [50, 2], amount: 5.0}
+    - {pos: [51, 2], amount: 5.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 200
+    expected: POWER_UP
+    description: zone A engages POWER_UP at first poll
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 4000
+    expected: NORMAL
+    description: between zones, 3s timer has expired and cleaner is NORMAL
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 5100
+    expected: POWER_UP
+    description: zone B re-engages POWER_UP
+  - kind: collision_count_eq
+    value: 0

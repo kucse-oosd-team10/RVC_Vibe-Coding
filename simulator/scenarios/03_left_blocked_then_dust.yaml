@@ -1,0 +1,39 @@
+name: left_blocked_then_dust
+description: |
+  Truth table (front=T, left=T, right=F) → robot turns RIGHT
+  to avoid, then continues cleaning. After avoidance, dust appears on the new
+  path and the cleaner is engaged.
+
+tick_duration_ms: 100
+max_ticks: 25
+power_off_at_tick: 18
+
+world:
+  size: [10, 6]
+  obstacles:
+    - [3, 2]
+    - [2, 1]
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 3], amount: 1.0}
+    - {pos: [2, 4], amount: 1.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: motor_history_contains
+    direction: RIGHT
+    description: front+left blocked → strategy turns RIGHT
+  - kind: cleaner_history_contains
+    power: NORMAL
+    description: cleaner activated when dust resumes
+  - kind: collision_count_eq
+    value: 0
+  - kind: dust_collected_at_least
+    value: 1.0
+    description: starting dust cell is cleaned during initial forward pass

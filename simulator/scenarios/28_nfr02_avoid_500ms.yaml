@@ -1,0 +1,32 @@
+name: nfr02_avoid_500ms
+description: |
+  NFR-02 derived. The maximum response time from "obstacle in front" to
+  "Avoiding state engaged" must be ≤ 500ms. Robot starts one cell away from
+  an obstacle; the trigger tick is when the controller could first observe
+  the obstacle (next poll). Avoiding must occur within 500ms (5 ticks at
+  100ms tick duration).
+
+tick_duration_ms: 100
+max_ticks: 8
+power_off_at_tick: 6
+
+world:
+  size: [10, 5]
+  obstacles:
+    - [3, 2]
+  dust: []
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: obstacle_to_avoid_within_ms
+    trigger_tick: 1
+    max_ms: 500
+    description: NFR-02 — Avoiding observed within 500ms of trigger
+  - kind: collision_count_eq
+    value: 0

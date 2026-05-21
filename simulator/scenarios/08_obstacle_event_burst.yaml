@@ -1,0 +1,37 @@
+name: obstacle_event_burst
+description: |
+  A burst of front-obstacle interrupts arrives over consecutive ticks while
+  the world is otherwise clear. Each interrupt routes through Avoiding back
+  to Cleaning. The controller must process every event without crashing and
+  stay collision-free. The world is intentionally large so the wandering
+  robot does not hit a wall and produce a spurious sixth avoidance.
+
+tick_duration_ms: 100
+max_ticks: 7
+power_off_at_tick: 6
+
+world:
+  size: [16, 9]
+  obstacles: []
+  dust: []
+
+robot:
+  start: [8, 4]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+interrupts:
+  - {tick: 1, sub_phase: before_poll}
+  - {tick: 2, sub_phase: before_poll}
+  - {tick: 3, sub_phase: before_poll}
+  - {tick: 4, sub_phase: before_poll}
+  - {tick: 5, sub_phase: before_poll}
+
+assertions:
+  - kind: motor_avoidance_count_eq
+    value: 5
+    description: each interrupt produces exactly one avoidance command
+  - kind: collision_count_eq
+    value: 0

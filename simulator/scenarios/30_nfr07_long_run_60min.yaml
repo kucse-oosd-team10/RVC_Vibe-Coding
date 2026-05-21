@@ -1,0 +1,49 @@
+name: nfr07_long_run_60min
+description: |
+  NFR-07 derived. Continuous operation for 60+ minutes. With
+  tick_duration_ms=100 that maps to 36000 ticks. We seed a small dusty
+  corridor and replenish dust every 100 ticks so the controller always has
+  meaningful work. The controller must never enter Error or Off mid-run.
+
+  Marked slow; excluded from default pytest runs.
+
+slow: true
+
+tick_duration_ms: 100
+max_ticks: 36000
+power_off_at_tick: 35999
+
+world:
+  size: [30, 5]
+  obstacles: []
+  dust_threshold: 0.5
+  dust_replenish_interval_ticks: 100
+  dust_replenish_amount: 1.0
+  dust:
+    - {pos: [3, 2], amount: 1.0}
+    - {pos: [6, 2], amount: 1.0}
+    - {pos: [9, 2], amount: 1.0}
+    - {pos: [12, 2], amount: 1.0}
+    - {pos: [15, 2], amount: 1.0}
+    - {pos: [18, 2], amount: 1.0}
+    - {pos: [21, 2], amount: 1.0}
+    - {pos: [24, 2], amount: 1.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: state_never_in
+    states: ["Error", "Off"]
+    from_tick: 1
+    to_tick: 35999
+    description: NFR-07 — no Error/Off across the full 60-minute run
+  - kind: final_state
+    expected: "Off"
+    description: clean shutdown at the very end
+  - kind: collision_count_eq
+    value: 0

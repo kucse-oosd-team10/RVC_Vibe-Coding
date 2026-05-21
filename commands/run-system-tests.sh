@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-SIMULATOR_ROOT="${RVC_SIMULATOR_ROOT:-../rvc-controller/simulator}"
+SIMULATOR_ROOT="${RVC_SIMULATOR_ROOT:-$PWD/simulator}"
 BINDINGS_DIR="${RVC_BINDINGS_DIR:-$PWD/build/bindings}"
 
 if [ ! -d "${SIMULATOR_ROOT}" ]; then
@@ -18,5 +18,5 @@ if [ ! -d "${BINDINGS_DIR}" ]; then
 fi
 
 PYTEST_BIN="${RVC_PYTEST:-pytest}"
-PYTHONPATH="${BINDINGS_DIR}${PYTHONPATH:+:${PYTHONPATH}}" \
+PYTHONPATH="${BINDINGS_DIR}:${SIMULATOR_ROOT}${PYTHONPATH:+:${PYTHONPATH}}" \
     "${PYTEST_BIN}" "${SIMULATOR_ROOT}/tests" -q -p no:cacheprovider

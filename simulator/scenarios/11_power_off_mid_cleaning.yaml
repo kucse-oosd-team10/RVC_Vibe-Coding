@@ -1,0 +1,34 @@
+name: power_off_mid_cleaning
+description: |
+  Mid-cleaning powerOff. Verifies that Cleaning.handlePowerOff stops the
+  cleaner, halts the motor, and returns the controller to Off.
+
+tick_duration_ms: 100
+max_ticks: 10
+power_off_at_tick: 3
+
+world:
+  size: [10, 5]
+  obstacles: []
+  dust:
+    - {pos: [2, 2], amount: 1.0}
+    - {pos: [3, 2], amount: 1.0}
+    - {pos: [4, 2], amount: 1.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: final_state
+    expected: "Off"
+  - kind: motor_history_contains
+    direction: STOP
+    description: powerOff issues STOP via Cleaning.handlePowerOff
+  - kind: cleaner_history_contains
+    power: "OFF"
+    description: cleaner is powered off as part of stop sequence

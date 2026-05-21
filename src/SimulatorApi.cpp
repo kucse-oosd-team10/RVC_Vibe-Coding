@@ -31,9 +31,9 @@ RVCController::RVCController(IObstacleSensor& obstacleSensor, IDustSensor& dustS
     : obstacleSensor_{obstacleSensor}, dustSensor_{dustSensor}, motor_{motor}, cleaner_{cleaner},
       movementManager_{movementManager}, cleaningManager_{cleaningManager},
       obstacleSubject_{obstacleSubject}, dustSubject_{dustSubject}, frontAdapter_{obstacleSensor_},
-      sideAdapter_{obstacleSensor_}, movementMotorAdapter_{motor_}, cleaningMotorAdapter_{cleaner_},
-      core_{frontAdapter_,    sideAdapter_,     dustSensor_,
-            movementManager_, cleaningManager_, defaultStrategy_} {
+      sideAdapter_{obstacleSensor_}, movementMotorAdapter_{motor_},
+      cleaningMotorAdapter_{cleaner_}, core_{frontAdapter_,    sideAdapter_,     dustSensor_,
+                                             movementManager_, cleaningManager_, defaultStrategy_} {
     obstacleSubject_.attach(this);
     dustSubject_.attach(this);
 }

@@ -1,0 +1,37 @@
+name: observer_silent_after_off
+description: |
+  After powerOff the controller is in Off. A late front-obstacle interrupt
+  arrives several ticks later. The Off state must ignore it: no avoidance
+  motor command, no transition out of Off. Tail-tick mode keeps the runner
+  ticking past powerOff so the late event can be observed.
+
+tick_duration_ms: 100
+max_ticks: 10
+power_off_at_tick: 2
+tail_ticks_after_power_off: 5
+
+world:
+  size: [8, 5]
+  obstacles: []
+  dust: []
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+interrupts:
+  - {tick: 4, sub_phase: before_poll}
+  - {tick: 5, sub_phase: before_poll}
+
+assertions:
+  - kind: motor_avoidance_count_after_clock_ms_eq
+    clock_ms: 300
+    value: 0
+    description: no avoidance commands after powerOff at clock 300ms
+  - kind: final_state
+    expected: "Off"
+  - kind: collision_count_eq
+    value: 0

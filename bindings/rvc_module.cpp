@@ -87,7 +87,7 @@ PYBIND11_MODULE(rvc, m) {
 
     py::class_<MovementManager>(m, "MovementManager")
         .def(py::init<IMotor&, IAvoidStrategy&>(), py::arg("motor"), py::arg("strategy"),
-             py::keep_alive<1, 2>(), py::keep_alive<1, 3>());
+             py::keep_alive<1, 3>());
 
     py::class_<CleaningManager>(m, "CleaningManager")
         .def(py::init<ICleaner&, Timer::ClockFn>(), py::arg("cleaner"), py::arg("clock"),
@@ -117,4 +117,3 @@ PYBIND11_MODULE(rvc, m) {
 
     m.def("current_state_name", &current_state_name, py::arg("controller"));
 }
-

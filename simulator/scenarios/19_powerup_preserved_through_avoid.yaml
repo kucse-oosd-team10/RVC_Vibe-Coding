@@ -1,0 +1,45 @@
+name: powerup_preserved_through_avoid
+description: |
+  Dust is detected first which engages POWER_UP. An obstacle then appears in
+  front, triggering an avoidance LEFT. The redirected path is also dusty so
+  the dust sensor stays True across the transition: re-entering Cleaning
+  through startCleaning() picks up the latest dust state and powers up
+  again rather than dropping back to NORMAL.
+
+tick_duration_ms: 100
+max_ticks: 7
+power_off_at_tick: 6
+
+world:
+  size: [10, 10]
+  obstacles:
+    - [5, 5]
+  dust_threshold: 0.5
+  dust:
+    - {pos: [2, 5], amount: 5.0}
+    - {pos: [3, 5], amount: 5.0}
+    - {pos: [4, 5], amount: 5.0}
+    - {pos: [4, 4], amount: 5.0}
+    - {pos: [4, 3], amount: 5.0}
+    - {pos: [4, 2], amount: 5.0}
+
+robot:
+  start: [1, 5]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: cleaner_history_contains
+    power: POWER_UP
+    description: dust engages POWER_UP
+  - kind: motor_avoidance_count_eq
+    value: 1
+    description: exactly one LEFT for the single front obstacle
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 500
+    expected: POWER_UP
+    description: still POWER_UP after avoidance, dust on new path keeps it engaged
+  - kind: collision_count_eq
+    value: 0

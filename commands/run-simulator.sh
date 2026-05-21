@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-SIMULATOR_ROOT="${RVC_SIMULATOR_ROOT:-../rvc-controller/simulator}"
+SIMULATOR_ROOT="${RVC_SIMULATOR_ROOT:-$PWD/simulator}"
 BINDINGS_DIR="${RVC_BINDINGS_DIR:-$PWD/build/bindings}"
 SCENARIO="${1:-${SIMULATOR_ROOT}/scenarios/01_basic_cleaning.yaml}"
 
@@ -18,5 +18,5 @@ if [ ! -d "${BINDINGS_DIR}" ]; then
     exit 1
 fi
 
-PYTHONPATH="${BINDINGS_DIR}${PYTHONPATH:+:${PYTHONPATH}}" \
-    rvc-sim run "${SCENARIO}"
+PYTHONPATH="${BINDINGS_DIR}:${SIMULATOR_ROOT}${PYTHONPATH:+:${PYTHONPATH}}" \
+    python3 -m rvc_sim.cli run "${SCENARIO}"

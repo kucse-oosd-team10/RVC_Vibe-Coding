@@ -1,0 +1,99 @@
+name: dust_sustained_powerup
+description: |
+  Dust persists across an extended corridor (cells initially seeded at 5.0,
+  far above the cleanup-per-tick rate). Every dust poll returns True so the
+  3-second POWER_UP timer is renewed before it can expire. POWER_UP must be
+  observed continuously past the natural 3000ms expiry.
+
+tick_duration_ms: 100
+max_ticks: 60
+power_off_at_tick: 55
+
+world:
+  size: [70, 5]
+  obstacles: []
+  dust_threshold: 0.5
+  dust:
+    - {pos: [1, 2], amount: 5.0}
+    - {pos: [2, 2], amount: 5.0}
+    - {pos: [3, 2], amount: 5.0}
+    - {pos: [4, 2], amount: 5.0}
+    - {pos: [5, 2], amount: 5.0}
+    - {pos: [6, 2], amount: 5.0}
+    - {pos: [7, 2], amount: 5.0}
+    - {pos: [8, 2], amount: 5.0}
+    - {pos: [9, 2], amount: 5.0}
+    - {pos: [10, 2], amount: 5.0}
+    - {pos: [11, 2], amount: 5.0}
+    - {pos: [12, 2], amount: 5.0}
+    - {pos: [13, 2], amount: 5.0}
+    - {pos: [14, 2], amount: 5.0}
+    - {pos: [15, 2], amount: 5.0}
+    - {pos: [16, 2], amount: 5.0}
+    - {pos: [17, 2], amount: 5.0}
+    - {pos: [18, 2], amount: 5.0}
+    - {pos: [19, 2], amount: 5.0}
+    - {pos: [20, 2], amount: 5.0}
+    - {pos: [21, 2], amount: 5.0}
+    - {pos: [22, 2], amount: 5.0}
+    - {pos: [23, 2], amount: 5.0}
+    - {pos: [24, 2], amount: 5.0}
+    - {pos: [25, 2], amount: 5.0}
+    - {pos: [26, 2], amount: 5.0}
+    - {pos: [27, 2], amount: 5.0}
+    - {pos: [28, 2], amount: 5.0}
+    - {pos: [29, 2], amount: 5.0}
+    - {pos: [30, 2], amount: 5.0}
+    - {pos: [31, 2], amount: 5.0}
+    - {pos: [32, 2], amount: 5.0}
+    - {pos: [33, 2], amount: 5.0}
+    - {pos: [34, 2], amount: 5.0}
+    - {pos: [35, 2], amount: 5.0}
+    - {pos: [36, 2], amount: 5.0}
+    - {pos: [37, 2], amount: 5.0}
+    - {pos: [38, 2], amount: 5.0}
+    - {pos: [39, 2], amount: 5.0}
+    - {pos: [40, 2], amount: 5.0}
+    - {pos: [41, 2], amount: 5.0}
+    - {pos: [42, 2], amount: 5.0}
+    - {pos: [43, 2], amount: 5.0}
+    - {pos: [44, 2], amount: 5.0}
+    - {pos: [45, 2], amount: 5.0}
+    - {pos: [46, 2], amount: 5.0}
+    - {pos: [47, 2], amount: 5.0}
+    - {pos: [48, 2], amount: 5.0}
+    - {pos: [49, 2], amount: 5.0}
+    - {pos: [50, 2], amount: 5.0}
+    - {pos: [51, 2], amount: 5.0}
+    - {pos: [52, 2], amount: 5.0}
+    - {pos: [53, 2], amount: 5.0}
+    - {pos: [54, 2], amount: 5.0}
+    - {pos: [55, 2], amount: 5.0}
+    - {pos: [56, 2], amount: 5.0}
+    - {pos: [57, 2], amount: 5.0}
+    - {pos: [58, 2], amount: 5.0}
+    - {pos: [59, 2], amount: 5.0}
+    - {pos: [60, 2], amount: 5.0}
+
+robot:
+  start: [1, 2]
+  heading: E
+
+cleaning_rates: {off: 0.0, normal: 0.5, power_up: 2.0}
+init_failures: {motor: 0, cleaner: 0, obstacle_sensor: 0, dust_sensor: 0}
+
+assertions:
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 200
+    expected: POWER_UP
+    description: POWER_UP engages on first dust event
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 3500
+    expected: POWER_UP
+    description: still POWER_UP past the natural 3s expiry (timer renewed)
+  - kind: cleaner_power_at_clock_ms
+    clock_ms: 5000
+    expected: POWER_UP
+    description: still POWER_UP at 5s — sustained as long as dust persists
+  - kind: collision_count_eq
+    value: 0
